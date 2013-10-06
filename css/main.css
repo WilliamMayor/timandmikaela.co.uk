@@ -1,37 +1,271 @@
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
-
-/* Global Reset */
-* {
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
-html, body { height: 100%; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
 
 body {
-  background-color: white;
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  font-weight: 300;
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: Quirky;
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/quirky_nots.eot");
+  src: url("/fonts/quirky_nots.eot?#iefix") format("embedded-opentype"), url("/fonts/quirky_nots.woff") format("woff"), url("/fonts/quirky_nots.ttf") format("truetype"), url("/fonts/quirky_nots.svg#Quirky") format("svg"); }
+
+@font-face {
+  font-family: Verano;
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/verano.eot");
+  src: url("/fonts/verano.eot?#iefix") format("embedded-opentype"), url("/fonts/verano.woff") format("woff"), url("/fonts/verano.ttf") format("truetype"), url("/fonts/verano.svg#Verano") format("svg"); }
+
+@font-face {
+  font-family: Qarmic;
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/qarmic.eot");
+  src: url("/fonts/qarmic.eot?#iefix") format("embedded-opentype"), url("/fonts/qarmic.woff") format("woff"), url("/fonts/qarmic.ttf") format("truetype"), url("/fonts/qarmic.svg#Qarmic") format("svg"); }
+
+body {
+  min-width: 550px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
   text-align: center;
-  font-size: 1.2em;
-}
+  font-family: Qarmic;
+  font-size: 18px;
+  line-height: 27px; }
 
 a {
   text-decoration: none;
-  color: #FF7878;
-}
-a:hover {
-  text-decoration: underline;
-}
-img {
-  width: 300px;
-  margin: 50px 0;
-}
-div {
-  width: 800px;
-  margin: 0 auto 50px auto;
-}
+  color: #56008c; }
+  a:hover {
+    text-decoration: underline; }
+
+::selection {
+  background: #aa7fc5; }
+
+::-moz-selection {
+  background: #aa7fc5; }
+
+.heading {
+  font-family: Quirky; }
+
+.nav {
+  position: relative;
+  bottom: 15px;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 12.6px;
+  line-height: 18.9px; }
+  .nav li {
+    display: inline-block; }
+    .nav li a {
+      color: grey; }
+      .nav li a:hover {
+        color: #56008c;
+        text-decoration: none; }
+
+.contact {
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin-top: 20px; }
+  .contact ul {
+    display: inline-block; }
+    .contact ul.bride {
+      text-align: right;
+      border-right: 1px solid #888;
+      padding-right: 20px;
+      margin-right: 15px; }
+    .contact ul.groom {
+      text-align: left; }
+    .contact ul img.facebook {
+      width: 30px;
+      height: 30px;
+      background-color: #3B5998; }
+
+.frame {
+  display: inline-block; }
+  .frame.title {
+    display: block;
+    text-align: left; }
+    .frame.title div {
+      text-align: center; }
+
+.curly.square {
+  background: url("/images/curly_square.svg");
+  width: 148px;
+  height: 137px;
+  padding: 60px 60px 60px 60px;
+  background-size: 268px 257px; }
+
+.flat.banner {
+  background: url("/images/flat_banner.svg");
+  width: 289px;
+  height: 80px;
+  padding: 50px 53px 48px 54px;
+  background-size: 396px 178px; }
+
+.blog {
+  background: url("/images/blog.svg");
+  width: 99px;
+  height: 40px;
+  padding: 75px 38px 55px 40px;
+  background-size: 177px 170px; }
+
+.timetable {
+  background: url("/images/timetable.svg");
+  width: 96px;
+  height: 41px;
+  padding: 60px 38px 50px 30px;
+  background-size: 164px 151px; }
+
+.guestbook {
+  background: url("/images/guestbook.svg");
+  width: 62px;
+  height: 57px;
+  padding: 45px 48px 36px 45px;
+  background-size: 155px 138px; }
+
+.venue {
+  background: url("/images/venue.svg");
+  width: 73px;
+  height: 44px;
+  padding: 50px 38px 31px 35px;
+  background-size: 146px 125px; }
+
+.accommodation {
+  background: url("/images/accommodation.svg");
+  width: 168px;
+  height: 54px;
+  padding: 50px 29px 38px 40px;
+  background-size: 237px 142px; }
+
+.giftlist {
+  background: url("/images/giftlist.svg");
+  width: 72px;
+  height: 44px;
+  padding: 40px 25px 50px 25px;
+  background-size: 122px 134px; }
+
+.photos {
+  background: url("/images/photos.svg");
+  width: 109px;
+  height: 42px;
+  padding: 70px 25px 50px 25px;
+  background-size: 159px 162px; }
+
+.rsvp {
+  background: url("/images/rsvp.svg");
+  width: 100px;
+  height: 37px;
+  padding: 65px 25px 50px 25px;
+  background-size: 150px 152px; }
+
+.picture {
+  width: 166px;
+  height: 161px;
+  background-size: 128.8px 132.8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block; }
+  .picture.holiday {
+    background-image: url("/images/holiday.jpg"); }
+    .picture.holiday.bigger {
+      background-size: 193.2px 199.2px;
+      width: 249px;
+      height: 241.5px; }
+      .picture.holiday.bigger img {
+        width: 249px;
+        height: 241.5px; }
+  .picture.scary {
+    background-image: url("/images/scary.jpg"); }
+  .picture.serious {
+    background-image: url("/images/serious.jpg"); }
+  .picture.smart {
+    background-image: url("/images/smart.jpg"); }
+  .picture.sweet {
+    background-image: url("/images/sweet.jpg"); }
+
+.information {
+  max-width: 700px;
+  padding-left: 100px;
+  margin: auto;
+  text-align: justify; }
+  .information .frame {
+    margin-left: -100px; }
+  .information ul {
+    list-style: disc;
+    margin: 20px 0 20px 50px; }
+  .information p {
+    margin: 20px 0; }
+  .information img {
+    display: block;
+    margin: auto; }
+
+#home .welcome {
+  display: block;
+  margin: auto;
+  font-size: 27px;
+  line-height: 40.5px; }
+  #home .welcome p {
+    margin-top: 10px; }
+#home .framed {
+  color: inherit; }
+  #home .framed:hover .blog {
+    background-image: url("/images/blog_hover.svg"); }
+  #home .framed:hover .timetable {
+    background-image: url("/images/timetable_hover.svg"); }
+  #home .framed:hover .guestbook {
+    background-image: url("/images/guestbook_hover.svg"); }
+  #home .framed:hover .venue {
+    background-image: url("/images/venue_hover.svg"); }
+  #home .framed:hover .accommodation {
+    background-image: url("/images/accommodation_hover.svg"); }
+  #home .framed:hover .giftlist {
+    background-image: url("/images/giftlist_hover.svg"); }
+  #home .framed:hover .photos {
+    background-image: url("/images/photos_hover.svg"); }
+  #home .framed:hover .rsvp {
+    background-image: url("/images/rsvp_hover.svg"); }
+#home .countdown {
+  font-size: 18px;
+  line-height: 27px;
+  display: block;
+  margin: auto; }
+  #home .countdown .days {
+    float: left;
+    padding: 0 10px;
+    margin-top: -10px; }
+    #home .countdown .days .number {
+      font-size: 63px;
+      line-height: 94.5px;
+      margin-right: 5px; }
+  #home .countdown .hours, #home .countdown .minutes {
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 180px; }
+    #home .countdown .hours .number, #home .countdown .minutes .number {
+      font-size: 36px;
+      margin-right: 5px; }

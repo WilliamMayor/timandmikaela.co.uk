@@ -1,0 +1,70 @@
+body {
+    min-width: 550px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+
+    text-align: center;
+    
+    font-family: Qarmic;
+    @include fontsize();
+}
+a {
+    text-decoration: none;
+    color: $splashcolor;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+::selection {
+    background: tint($splashcolor, 50%);
+    }
+::-moz-selection {
+    background: tint($splashcolor, 50%);
+}
+.heading {
+    font-family: Quirky;
+}
+.nav {
+    position: relative;
+    bottom: 15px;
+
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    @include fontsize(0.7);
+
+    li {
+        display: inline-block;
+
+        a {
+            color: grey;
+
+            &:hover {
+                color: $splashcolor;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.contact {
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    margin-top: 20px;
+    ul {
+        display: inline-block;
+        &.bride {
+            text-align: right;
+            border-right: 1px solid #888;
+            padding-right: 20px;
+            margin-right: 15px;
+        }
+        &.groom {
+            text-align: left;
+        }
+        img.facebook {
+            width: 30px;
+            height: 30px;
+            background-color: #3B5998;
+        }
+    }
+}

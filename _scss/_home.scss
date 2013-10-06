@@ -1,0 +1,65 @@
+#home {
+    .welcome {
+        display: block;
+        margin: auto;
+        @include fontsize(1.5);
+        p {
+            margin-top: 10px;
+        }
+    }
+    .framed {
+        color: inherit;
+
+        &:hover {
+            .blog {
+                background-image: url('/images/blog_hover.svg');
+            }
+            .timetable {
+                background-image: url('/images/timetable_hover.svg');
+            }
+            .guestbook {
+                background-image: url('/images/guestbook_hover.svg');
+            }
+            .venue {
+                background-image: url('/images/venue_hover.svg');
+            }
+            .accommodation {
+                background-image: url('/images/accommodation_hover.svg');
+            }
+            .giftlist {
+                background-image: url('/images/giftlist_hover.svg');
+            }
+            .photos {
+                background-image: url('/images/photos_hover.svg');
+            }
+            .rsvp {
+                background-image: url('/images/rsvp_hover.svg');
+            }
+        }
+    }
+    .countdown {
+        @include fontsize(1);
+        display: block;
+        margin: auto;
+        .days {
+            float: left;
+            padding: 0 10px;
+            margin-top: -10px;
+
+            .number {
+                @include fontsize(3.5);
+                margin-right: 5px;
+            }
+        }
+        .hours, .minutes {
+            text-align: left;
+            margin-top: 5px;
+            margin-left: 180px;
+
+            .number {
+                font-size: 2*$fontsize;
+                margin-right: 5px;
+            }
+        }
+    }
+}
