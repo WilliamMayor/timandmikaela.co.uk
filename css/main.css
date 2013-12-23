@@ -367,3 +367,37 @@ footer {
       margin-right: 0; }
     #home .guestbook .frame {
       padding-top: 45px; }
+
+#rsvp form {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-left: 25.58941%;
+  background: url("/images/frames.svg") no-repeat -759px -26px;
+  width: 620px;
+  height: 520px;
+  padding: 130px; }
+  #rsvp form:last-child {
+    margin-right: 0; }
+  #rsvp form h1 {
+    font-family: Quirky;
+    font-size: 46px;
+    line-height: 46px;
+    text-align: center; }
+  #rsvp form div {
+    margin: 20px 0; }
+  #rsvp form .names input {
+    font-size: 18px;
+    line-height: 27px;
+    font-family: Qarmic;
+    width: 300px;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none; }
+  #rsvp form .response {
+    margin-left: 30px; }
+    #rsvp form .response input {
+      margin-right: 10px; }
+  #rsvp form .send {
+    text-align: center; }

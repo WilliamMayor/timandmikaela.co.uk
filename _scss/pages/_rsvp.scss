@@ -1,0 +1,43 @@
+#rsvp {
+    form {
+        @include span-columns(6);
+        @include shift(3);
+
+        background: url('/images/frames.svg') no-repeat -759px -26px;
+        width: 620px;
+        height: 520px;
+
+        padding: 130px;
+
+        h1 {
+            font-family: Quirky;
+            font-size: 46px;
+            line-height: 46px;
+            text-align: center;
+        }
+
+        div {
+            margin: 20px 0;
+        }
+
+        .names {
+            input {
+                @include fontsize();
+                font-family: Qarmic;
+                width: 300px;
+                border: none;
+                border-bottom: 2px solid black;
+                outline: none;
+            }
+        }
+        .response {
+            margin-left: 30px;
+            input {
+                margin-right: 10px;
+            }
+        }
+        .send {
+            text-align: center;
+        }
+    }
+}
