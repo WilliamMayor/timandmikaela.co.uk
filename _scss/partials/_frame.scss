@@ -1,0 +1,124 @@
+@mixin frame($w, $h, $pt, $pr, $pb, $pl) {
+    width: $w - $pr - $pl;
+    height: $h - $pt - $pb;
+    padding: $pt $pr $pb $pl;
+    background-size: $w $h;
+}
+a.frame {
+    display: block;
+    &:hover {
+        text-decoration: none;
+    }
+}
+.outerframe.welcome {
+    .frame {
+        background: url('/images/frames.svg') no-repeat -442px -757px;
+        width: 269px;
+        height: 258px;
+        padding: 60px;
+    }
+}
+.outerframe.countdown {
+    .frame {
+        background: url('/images/frames.svg') no-repeat -23px -860px;
+        width: 384px;
+        height: 172px;
+        padding-top: 45px;
+        padding-left: 45px;
+    }
+}
+.outerframe.venue {
+    .frame {
+        background: url('/images/frames.svg') no-repeat -389px -184px;
+        width: 147px;
+        height: 125px;
+        padding: 33px;
+    }
+    .frame.highlight, a.frame:hover {
+        background: url('/images/frames.svg') no-repeat -567px -184px;
+    }
+}
+.outerframe.rsvp {
+    .frame {
+        background: url('/images/frames.svg') no-repeat -378px -502px;
+        width: 150px;
+        height: 153px;
+        padding: 33px;
+    }
+    .frame.highlight, a.frame:hover {
+        background: url('/images/frames.svg') no-repeat -548px -502px;
+    }
+}
+.outerframe.accomodation {
+    .frame {
+        background: url('/images/frames.svg') no-repeat -10px -18px;
+        width: 237px;
+        height: 143px;
+        padding: 10px;
+    }
+    .frame.highlight, a.frame:hover {
+        background: url('/images/frames.svg') no-repeat -257px -18px;
+    }
+}
+.outerframe.timetable {
+    .frame {
+        background: url('/images/frames.svg') no-repeat -392px -339px;
+        width: 164px;
+        height: 152px;
+        padding: 40px 40px 50px 30px;
+    }
+    .frame.highlight, a.frame:hover {
+        background: url('/images/frames.svg') no-repeat -575px -339px;
+    }
+}
+.outerframe.giftlist {
+    .frame {
+        background: url('/images/frames.svg') no-repeat -57px -688px;
+        width: 112px;
+        height: 134px;
+        padding: 30px 25px 40px 25px;
+    }
+    .frame.highlight, a.frame:hover {
+        background: url('/images/frames.svg') no-repeat -192px -688px;
+    }
+}
+.outerframe.blog {
+    .frame {
+        background: url('/images/frames.svg') no-repeat -17px -162px;
+        width: 177px;
+        height: 170px;
+        padding: 60px 40px 55px 45px;
+    }
+    .frame.highlight, a.frame:hover {
+        background: url('/images/frames.svg') no-repeat -195px -162px;
+    }
+}
+.outerframe.photos {
+    .frame {
+        background: url('/images/frames.svg') no-repeat -33px -498px;
+        width: 160px;
+        height: 162px;
+        padding: 60px 35px 45px 35px;
+    }
+    .frame.highlight, a.frame:hover {
+        background: url('/images/frames.svg') no-repeat -203px -498px;
+    }
+}
+.outerframe.guestbook {
+    .frame {
+        background: url('/images/frames.svg') no-repeat -30px -346px;
+        width: 155px;
+        height: 138px;
+        padding: 35px 40px 35px 40px;
+    }
+    .frame.highlight, a.frame:hover {
+        background: url('/images/frames.svg') no-repeat -213px -346px;
+    }
+}
+.outerframe.picture {
+    .frame {
+        background: url('/images/frames.svg') no-repeat -540px -8px;
+        width: 166px;
+        height: 162px;
+    }
+}

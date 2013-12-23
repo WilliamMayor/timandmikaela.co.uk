@@ -1,14 +1,15 @@
 @import "reset";
 
 @import "bourbon/bourbon";
+@import "neat/neat";
 
 @import "variables";
 @import "mixins";
-
 @import "fonts";
-@import "global";
-@import "frames";
-@import "picture";
-@import "information";
 
-@import "home";
+@import "partials/frame";
+
+@import "default";
+@import "pages/home";
+
+

@@ -1,0 +1,106 @@
+#home {
+    text-align: center;
+    a.frame {
+        color: black;
+    }
+    .venue {
+        @include span-columns(2);
+        @include shift(0.5);
+        height: 258px;
+        .frame {
+            padding-top: 50px;
+            padding-left: 25px;
+        }
+    }
+    .rsvp {
+        @include span-columns(2);
+        height: 258px;
+        .frame {
+            padding-top: 65px;
+        }
+    }
+    .welcome {
+        @include span-columns(3);
+        font-family: Quirky;
+        @include fontsize(2.5);
+        line-height: 45px;
+        .frame {
+            margin: auto;
+        }
+    }
+    .accomodation {
+        @include span-columns(4.5);
+        @include omega();
+        height: 258px;
+        .frame {
+            padding-top: 55px;
+            padding-left: 25px;
+            margin: auto;
+        }
+    }
+    .timetable {
+        @include span-columns(2);
+        @include shift(1);
+        height: 172px;
+        .frame {
+            padding-top: 60px;
+        }
+    }
+    .countdown {
+        @include span-columns(6);
+        @include fontsize(1);
+        margin: 20px 0;
+        .frame {
+            margin: auto;
+        }
+        .days {
+            float: left;
+            padding: 0 10px;
+            margin-top: -10px;
+
+            .number {
+                @include fontsize(3.5);
+                margin-right: 5px;
+            }
+        }
+        .hours, .minutes {
+            text-align: left;
+            margin-top: 5px;
+            margin-left: 180px;
+
+            .number {
+                font-size: 2*$fontsize;
+                margin-right: 5px;
+            }
+        }
+    }
+    .giftlist {
+        @include span-columns(3);
+        @include omega();
+        height: 172px;
+        .frame {
+            padding-top: 40px;
+        }
+    }
+    .blog {
+        @include span-columns(2);
+        @include shift(2);
+        .frame {
+            padding-top: 75px;
+        }
+    }
+    .photos {
+        @include span-columns(2);
+        @include shift(1);
+        .frame {
+            padding-top: 70px;
+        }
+    }
+    .guestbook {
+        @include span-columns(2);
+        @include shift(1);
+        .frame {
+            padding-top: 45px;
+        }
+    }
+}

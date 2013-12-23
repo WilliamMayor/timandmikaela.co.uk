@@ -1,0 +1,69 @@
+body {
+    font-family: Qarmic;
+    @include fontsize();
+    min-width: 900px;
+}
+a {
+    text-decoration: none;
+    color: $splashcolor;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+::selection {
+    background: tint($splashcolor, 50%);
+    }
+::-moz-selection {
+    background: tint($splashcolor, 50%);
+}
+header {
+    @include outer-container();
+    margin-bottom: 10px;
+    text-align: center;
+    nav {
+        @include span-columns(12);
+        text-align: center;
+        font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        @include fontsize(0.7);
+        li {
+            display: inline-block;
+            a {
+                color: grey;
+                &:hover {
+                    color: $splashcolor;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+section {
+    @include outer-container();
+}
+footer {
+    @include outer-container();
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    margin-top: 10px;
+    ul {
+        @include span-columns(6);
+        &.bride {
+            text-align: right;
+            border-right: 1px solid #888;
+            padding-right: 2.35765%;
+        }
+        &.groom {
+            text-align: left;
+        }
+        .title {
+            font-family: Quirky;
+            @include fontsize(1.5);
+        }
+        img.facebook {
+            width: 30px;
+            height: 30px;
+            background-color: #3B5998;
+        }
+    }
+}

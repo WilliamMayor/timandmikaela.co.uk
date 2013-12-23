@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="/css/main.css">
-        <script type="text/javascript" src="/js/jquery-1.10.2.min.js" /></script>
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="/css/main.css" />
+        <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="/js/main.js"></script>
     </head>
     <body id="{{ page.name }}">
-        <ul class="nav">
-            <li><a href="/">home</a></li> |
-            <li><a href="/rsvp/">rsvp</a></li> |
-            <li><a href="/venue/">venue</a></li> |
-            <li><a href="/timetable/">timetable</a></li> |
-            <li><a href="/giftlist/">gift list</a></li> |
-            <li><a href="/accommodation/">accommodation</a></li> |
-            <li><a href="/blog/">blog</a></li> |
-            <li><a href="/guestbook/">guest book</a></li> |
-            <li><a href="/photos/">photos</a></li>
-        </ul>
-        {{ content }}
-        <div class="contact">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/">home</a></li> |
+                    <li><a href="/venue/">venue</a></li> |
+                    <li><a href="/rsvp/">rsvp</a></li> |
+                    <li><a href="/accommodation/">accommodation</a></li> |
+                    <li><a href="/timetable/">timetable</a></li> |
+                    <li><a href="/giftlist/">gift list</a></li> |
+                    <li><a href="/blog/">blog</a></li> |
+                    <li><a href="/photos/">photos</a></li> |
+                    <li><a href="/guestbook/">guest book</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            {{ content }}
+        </section>
+        <footer>
             <ul class="bride">
-                <li>Contact the Bride</li>
+                <li class="title">Contact the Bride</li>
                 <li><a href="mailto:mikaela@timandmikaela.co.uk">mikaela@timandmikaela.co.uk</a></li>
                 <li><a href="https://www.facebook.com/mikaela.fowkes"><img src="/images/facebook.png" class="facebook"/></a></li>
             </ul>
             <ul class="groom">
-                <li>Contact the Groom</li>
+                <li class="title">Contact the Groom</li>
                 <li><a href="mailto:tim@timandmikaela.co.uk">tim@timandmikaela.co.uk</a></li>
                 <li><a href="https://www.facebook.com/tim.woodgates"><img src="/images/facebook.png" class="facebook"/></a></li>
             </ul>
-        </div>
+        </footer>
     </body>
 </html>
