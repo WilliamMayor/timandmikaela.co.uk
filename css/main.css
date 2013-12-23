@@ -134,11 +134,6 @@ a.frame {
 .outerframe.guestbook .frame.highlight, .outerframe.guestbook a.frame:hover {
   background: url("/images/frames.svg") no-repeat -213px -346px; }
 
-.outerframe.picture .frame {
-  background: url("/images/frames.svg") no-repeat -540px -8px;
-  width: 166px;
-  height: 162px; }
-
 body {
   font-family: Qarmic;
   font-size: 18px;
@@ -239,13 +234,22 @@ footer {
   text-align: center; }
   #home a.frame {
     color: black; }
+  #home .frame {
+    margin: auto; }
+  #home .venue, #home .rsvp, #home .accomodation {
+    height: 258px;
+    padding-top: 55px; }
+  #home .timetable, #home .countdown, #home .giftlist {
+    margin: 20px 0;
+    height: 172px; }
+  #home .blog, #home .photos, #home .guestbook {
+    height: 170px; }
   #home .venue {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 14.70196%;
-    margin-left: 4.2649%;
-    height: 258px; }
+    margin-left: 4.2649%; }
     #home .venue:last-child {
       margin-right: 0; }
     #home .venue .frame {
@@ -255,8 +259,7 @@ footer {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 14.70196%;
-    height: 258px; }
+    width: 14.70196%; }
     #home .rsvp:last-child {
       margin-right: 0; }
     #home .rsvp .frame {
@@ -279,21 +282,19 @@ footer {
     display: block;
     margin-right: 2.35765%;
     width: 36.02647%;
-    margin-right: 0;
-    height: 258px; }
+    margin-right: 0; }
     #home .accomodation:last-child {
       margin-right: 0; }
     #home .accomodation .frame {
       padding-top: 55px;
-      padding-left: 25px;
-      margin: auto; }
+      padding-left: 25px; }
   #home .timetable {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 14.70196%;
     margin-left: 8.5298%;
-    height: 172px; }
+    padding-top: 10px; }
     #home .timetable:last-child {
       margin-right: 0; }
     #home .timetable .frame {
@@ -304,12 +305,9 @@ footer {
     margin-right: 2.35765%;
     width: 48.82117%;
     font-size: 18px;
-    line-height: 27px;
-    margin: 20px 0; }
+    line-height: 27px; }
     #home .countdown:last-child {
       margin-right: 0; }
-    #home .countdown .frame {
-      margin: auto; }
     #home .countdown .days {
       float: left;
       padding: 0 10px;
@@ -329,9 +327,9 @@ footer {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 23.23176%;
+    width: 14.70196%;
     margin-right: 0;
-    height: 172px; }
+    padding-top: 20px; }
     #home .giftlist:last-child {
       margin-right: 0; }
     #home .giftlist .frame {
@@ -351,7 +349,8 @@ footer {
     display: block;
     margin-right: 2.35765%;
     width: 14.70196%;
-    margin-left: 8.5298%; }
+    margin-left: 8.5298%;
+    padding-top: 5px; }
     #home .photos:last-child {
       margin-right: 0; }
     #home .photos .frame {
@@ -361,7 +360,9 @@ footer {
     display: block;
     margin-right: 2.35765%;
     width: 14.70196%;
-    margin-left: 8.5298%; }
+    margin-left: 8.5298%;
+    margin-right: 0;
+    padding-top: 15px; }
     #home .guestbook:last-child {
       margin-right: 0; }
     #home .guestbook .frame {

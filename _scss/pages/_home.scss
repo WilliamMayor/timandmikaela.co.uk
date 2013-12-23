@@ -3,10 +3,23 @@
     a.frame {
         color: black;
     }
+    .frame {
+        margin: auto;
+    }
+    .venue, .rsvp, .accomodation {
+        height: 258px;
+        padding-top: 55px;
+    }
+    .timetable, .countdown, .giftlist {
+        margin: 20px 0;
+        height: 172px;
+    }
+    .blog, .photos, .guestbook {
+        height: 170px;
+    }
     .venue {
         @include span-columns(2);
         @include shift(0.5);
-        height: 258px;
         .frame {
             padding-top: 50px;
             padding-left: 25px;
@@ -14,7 +27,6 @@
     }
     .rsvp {
         @include span-columns(2);
-        height: 258px;
         .frame {
             padding-top: 65px;
         }
@@ -31,17 +43,15 @@
     .accomodation {
         @include span-columns(4.5);
         @include omega();
-        height: 258px;
         .frame {
             padding-top: 55px;
             padding-left: 25px;
-            margin: auto;
         }
     }
     .timetable {
         @include span-columns(2);
         @include shift(1);
-        height: 172px;
+        padding-top: 10px;
         .frame {
             padding-top: 60px;
         }
@@ -49,10 +59,6 @@
     .countdown {
         @include span-columns(6);
         @include fontsize(1);
-        margin: 20px 0;
-        .frame {
-            margin: auto;
-        }
         .days {
             float: left;
             padding: 0 10px;
@@ -75,9 +81,9 @@
         }
     }
     .giftlist {
-        @include span-columns(3);
+        @include span-columns(2);
         @include omega();
-        height: 172px;
+        padding-top: 20px;
         .frame {
             padding-top: 40px;
         }
@@ -92,6 +98,7 @@
     .photos {
         @include span-columns(2);
         @include shift(1);
+        padding-top: 5px;
         .frame {
             padding-top: 70px;
         }
@@ -99,6 +106,8 @@
     .guestbook {
         @include span-columns(2);
         @include shift(1);
+        @include omega();
+        padding-top: 15px;
         .frame {
             padding-top: 45px;
         }
