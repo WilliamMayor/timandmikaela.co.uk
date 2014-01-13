@@ -1,7 +1,7 @@
 body {
     font-family: Qarmic;
     @include fontsize();
-    min-width: 900px;
+    min-width: 1050px;
 }
 a {
     text-decoration: none;
@@ -38,14 +38,84 @@ header {
         }
     }
 }
+a.frame {
+    color: black;
+}
+.frame {
+    text-align: center;
+}
+.atvr {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 260px;
+  text-align: right;
+  .outerframe {
+    display: inline-block;
+    margin: 10px 0;
+  }
+  .venue {
+      .frame {
+          padding-top: 50px;
+          padding-left: 25px;
+      }
+  }
+  .rsvp {
+      .frame {
+          padding-top: 65px;
+      }
+  }
+  .accomodation {
+      .frame {
+          padding-top: 55px;
+          padding-left: 25px;
+      }
+  }
+  .timetable {
+      .frame {
+          padding-top: 60px;
+      }
+  }
+}
 section {
-    @include outer-container();
+  margin-left: 260px;
+  margin-right: 260px;
+}
+.gbpg {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 260px;
+  margin-left: 790px;
+  .outerframe {
+    margin: 10px 0;
+  }
+  .giftlist {
+        .frame {
+            padding-top: 40px;
+        }
+    }
+    .blog {
+        .frame {
+            padding-top: 75px;
+        }
+    }
+    .photos {
+        .frame {
+            padding-top: 70px;
+        }
+    }
+    .guestbook {
+        .frame {
+            padding-top: 45px;
+        }
+    }
 }
 footer {
     @include outer-container();
     font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: 300;
-    margin-top: 10px;
+    margin-top: 50px;
     ul {
         @include span-columns(6);
         &.bride {
