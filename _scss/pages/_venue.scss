@@ -1,0 +1,22 @@
+#venue {
+    #slides {
+        display:none;
+        .slidesjs-pagination {
+            float: right;
+            list-style: none;
+            li {
+                float: left;
+                margin: 0 1px;
+                a {
+                    display: block;
+                    width: 13px;
+                    float: left;
+
+                    &.active {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -6,7 +6,9 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width" />
         <link rel="stylesheet" href="/css/main.css" />
+        <script type="text/javascript" src="http://utilities.dev/live.js"></script>
         <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.slides.min.js"></script>
         <script type="text/javascript" src="/js/main.js"></script>
     </head>
     <body id="{{ page.name }}">
@@ -40,7 +42,9 @@
             </div>
         </nav>
         <section class="content">
-            {{ content }}
+            <div class="wrapper">
+                {{ content }}
+            </div>
         </section>
         <nav class="gbpg">
             <div class="outerframe giftlist">

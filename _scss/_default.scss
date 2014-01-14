@@ -1,7 +1,124 @@
 body {
-    font-family: Qarmic;
     @include fontsize();
-    min-width: 1050px;
+    @include outer-container();
+    min-width: 900px;
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    header {
+        @include span-columns(12);
+        @include omega();
+        nav {
+            @include span-columns(12);
+            text-align: center;
+            font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            @include fontsize(0.7);
+            li {
+                display: inline-block;
+                a {
+                    color: grey;
+                    &:hover {
+                        color: $splashcolor;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    .atvr {
+        @include span-columns(2);
+        text-align: right;
+        .outerframe {
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .venue {
+          .frame {
+              padding-top: 50px;
+              padding-left: 25px;
+          }
+        }
+        .rsvp {
+          .frame {
+              padding-top: 65px;
+          }
+        }
+        .accomodation {
+          .frame {
+              padding-top: 55px;
+              padding-left: 25px;
+          }
+        }
+        .timetable {
+          .frame {
+              padding-top: 60px;
+          }
+        }
+    }
+    .content {
+        @include span-columns(8);
+        padding: 150px 50px;
+        .wrapper {
+            width: 500px;
+            margin: auto;
+            text-align: justify;
+            
+        }
+    }
+    .gbpg {
+        font-family: Quirky;
+        @include span-columns(2);
+        @include omega();
+        .outerframe {
+            margin: 10px 0;
+        }
+        .giftlist {
+            .frame {
+                padding-top: 40px;
+            }
+        }
+        .blog {
+            .frame {
+                padding-top: 75px;
+            }
+        }
+        .photos {
+            .frame {
+                padding-top: 70px;
+            }
+        }
+        .guestbook {
+            .frame {
+                padding-top: 45px;
+            }
+        }
+    }
+    footer {
+        @include span-columns(12);
+        @include omega();
+        font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        ul {
+            @include span-columns(6 of 12);
+            &.bride {
+                text-align: right;
+                border-right: 1px solid #888;
+                padding-right: 2.35765%;
+            }
+            &.groom {
+                text-align: left;
+            }
+            .title {
+                font-family: Quirky;
+                @include fontsize(1.5);
+            }
+            img.facebook {
+                width: 30px;
+                height: 30px;
+                background-color: #3B5998;
+            }
+        }
+    }
 }
 a {
     text-decoration: none;
@@ -16,124 +133,9 @@ a {
 ::-moz-selection {
     background: tint($splashcolor, 50%);
 }
-header {
-    @include outer-container();
-    margin-bottom: 10px;
-    text-align: center;
-    nav {
-        @include span-columns(12);
-        text-align: center;
-        font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-        font-weight: 300;
-        @include fontsize(0.7);
-        li {
-            display: inline-block;
-            a {
-                color: grey;
-                &:hover {
-                    color: $splashcolor;
-                    text-decoration: none;
-                }
-            }
-        }
-    }
-}
 a.frame {
     color: black;
 }
 .frame {
     text-align: center;
-}
-.atvr {
-  position: absolute;
-  left: 0;
-  top: 50px;
-  width: 260px;
-  text-align: right;
-  .outerframe {
-    display: inline-block;
-    margin: 10px 0;
-  }
-  .venue {
-      .frame {
-          padding-top: 50px;
-          padding-left: 25px;
-      }
-  }
-  .rsvp {
-      .frame {
-          padding-top: 65px;
-      }
-  }
-  .accomodation {
-      .frame {
-          padding-top: 55px;
-          padding-left: 25px;
-      }
-  }
-  .timetable {
-      .frame {
-          padding-top: 60px;
-      }
-  }
-}
-section {
-  margin-left: 260px;
-  margin-right: 260px;
-}
-.gbpg {
-  position: absolute;
-  right: 0;
-  top: 50px;
-  width: 260px;
-  margin-left: 790px;
-  .outerframe {
-    margin: 10px 0;
-  }
-  .giftlist {
-        .frame {
-            padding-top: 40px;
-        }
-    }
-    .blog {
-        .frame {
-            padding-top: 75px;
-        }
-    }
-    .photos {
-        .frame {
-            padding-top: 70px;
-        }
-    }
-    .guestbook {
-        .frame {
-            padding-top: 45px;
-        }
-    }
-}
-footer {
-    @include outer-container();
-    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    font-weight: 300;
-    margin-top: 50px;
-    ul {
-        @include span-columns(6);
-        &.bride {
-            text-align: right;
-            border-right: 1px solid #888;
-            padding-right: 2.35765%;
-        }
-        &.groom {
-            text-align: left;
-        }
-        .title {
-            font-family: Quirky;
-            @include fontsize(1.5);
-        }
-        img.facebook {
-            width: 30px;
-            height: 30px;
-            background-color: #3B5998;
-        }
-    }
 }

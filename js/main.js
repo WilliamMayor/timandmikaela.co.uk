@@ -18,13 +18,23 @@ HOME = {
         $(".countdown .minutes span.plural").text((minutes === 1) ? '' : 's');
     }
 };
+VENUE = {
+    init: function() {
+        $("#slides").slidesjs({
+            width: 500,
+            height: 300,
+            navigation: false
+      });
+    }
+}
 COMMON = {
     init: function() {
     }
 };
 APP = {
     common: COMMON.init,
-    home: HOME.init
+    home: HOME.init,
+    venue: VENUE.init
 };
 UTIL = {
     fire: function(id) {

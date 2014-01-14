@@ -5,11 +5,13 @@
 
 @import "variables";
 @import "mixins";
+@import "fontawesome";
 @import "fonts";
 
 @import "partials/frame";
 
 @import "default";
 @import "pages/home";
+@import "pages/venue";
 @import "pages/rsvp";
 
