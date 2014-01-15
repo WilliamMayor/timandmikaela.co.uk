@@ -1347,81 +1347,105 @@ a.frame {
     text-decoration: none; }
 
 .outerframe.welcome .frame {
-  background: url("/images/frames.svg") no-repeat -442px -757px;
+  background: url("/images/sprites.svg") no-repeat -442px -757px;
   width: 269px;
   height: 258px;
   padding: 60px; }
 
 .outerframe.countdown .frame {
-  background: url("/images/frames.svg") no-repeat -23px -860px;
+  background: url("/images/sprites.svg") no-repeat -23px -860px;
   width: 384px;
   height: 172px;
   padding-top: 45px;
   padding-left: 45px; }
 
 .outerframe.venue .frame {
-  background: url("/images/frames.svg") no-repeat -389px -184px;
+  background: url("/images/sprites.svg") no-repeat -389px -184px;
   width: 147px;
   height: 125px;
   padding: 33px; }
-.outerframe.venue .frame.highlight, .outerframe.venue a.frame:hover {
-  background: url("/images/frames.svg") no-repeat -567px -184px; }
+  .outerframe.venue .frame:hover {
+    background: url("/images/sprites.svg") no-repeat -567px -184px; }
+
+#venue .outerframe.venue .frame {
+  background: url("/images/sprites.svg") no-repeat -567px -184px; }
 
 .outerframe.rsvp .frame {
-  background: url("/images/frames.svg") no-repeat -378px -502px;
+  background: url("/images/sprites.svg") no-repeat -378px -502px;
   width: 150px;
   height: 153px;
   padding: 33px; }
-.outerframe.rsvp .frame.highlight, .outerframe.rsvp a.frame:hover {
-  background: url("/images/frames.svg") no-repeat -548px -502px; }
+  .outerframe.rsvp .frame:hover {
+    background: url("/images/sprites.svg") no-repeat -548px -502px; }
+
+#rsvp .outerframe.rsvp .frame {
+  background: url("/images/sprites.svg") no-repeat -548px -502px; }
 
 .outerframe.accomodation .frame {
-  background: url("/images/frames.svg") no-repeat -10px -18px;
+  background: url("/images/sprites.svg") no-repeat -10px -18px;
   width: 237px;
   height: 143px;
   padding: 10px; }
-.outerframe.accomodation .frame.highlight, .outerframe.accomodation a.frame:hover {
-  background: url("/images/frames.svg") no-repeat -257px -18px; }
+  .outerframe.accomodation .frame:hover {
+    background: url("/images/sprites.svg") no-repeat -257px -18px; }
+
+#accomodation .outerframe.accomodation .frame {
+  background: url("/images/sprites.svg") no-repeat -257px -18px; }
 
 .outerframe.timetable .frame {
-  background: url("/images/frames.svg") no-repeat -392px -339px;
+  background: url("/images/sprites.svg") no-repeat -392px -339px;
   width: 164px;
   height: 152px;
   padding: 40px 40px 50px 30px; }
-.outerframe.timetable .frame.highlight, .outerframe.timetable a.frame:hover {
-  background: url("/images/frames.svg") no-repeat -575px -339px; }
+  .outerframe.timetable .frame:hover {
+    background: url("/images/sprites.svg") no-repeat -575px -339px; }
+
+#timetable .outerframe.timetable .frame {
+  background: url("/images/sprites.svg") no-repeat -575px -339px; }
 
 .outerframe.giftlist .frame {
-  background: url("/images/frames.svg") no-repeat -57px -688px;
+  background: url("/images/sprites.svg") no-repeat -57px -688px;
   width: 112px;
   height: 134px;
   padding: 30px 25px 40px 25px; }
-.outerframe.giftlist .frame.highlight, .outerframe.giftlist a.frame:hover {
-  background: url("/images/frames.svg") no-repeat -192px -688px; }
+  .outerframe.giftlist .frame:hover {
+    background: url("/images/sprites.svg") no-repeat -192px -688px; }
+
+#giftlist .outerframe.giftlist .frame {
+  background: url("/images/sprites.svg") no-repeat -192px -688px; }
 
 .outerframe.blog .frame {
-  background: url("/images/frames.svg") no-repeat -17px -162px;
+  background: url("/images/sprites.svg") no-repeat -17px -162px;
   width: 177px;
   height: 170px;
   padding: 60px 40px 55px 45px; }
-.outerframe.blog .frame.highlight, .outerframe.blog a.frame:hover {
-  background: url("/images/frames.svg") no-repeat -195px -162px; }
+  .outerframe.blog .frame:hover {
+    background: url("/images/sprites.svg") no-repeat -195px -162px; }
+
+#blog .outerframe.blog .frame {
+  background: url("/images/sprites.svg") no-repeat -195px -162px; }
 
 .outerframe.photos .frame {
-  background: url("/images/frames.svg") no-repeat -33px -498px;
+  background: url("/images/sprites.svg") no-repeat -33px -498px;
   width: 160px;
   height: 162px;
   padding: 60px 35px 45px 35px; }
-.outerframe.photos .frame.highlight, .outerframe.photos a.frame:hover {
-  background: url("/images/frames.svg") no-repeat -203px -498px; }
+  .outerframe.photos .frame:hover {
+    background: url("/images/sprites.svg") no-repeat -203px -498px; }
+
+#photos .outerframe.photos .frame {
+  background: url("/images/sprites.svg") no-repeat -203px -498px; }
 
 .outerframe.guestbook .frame {
-  background: url("/images/frames.svg") no-repeat -30px -346px;
+  background: url("/images/sprites.svg") no-repeat -30px -346px;
   width: 155px;
   height: 138px;
   padding: 35px 40px 35px 40px; }
-.outerframe.guestbook .frame.highlight, .outerframe.guestbook a.frame:hover {
-  background: url("/images/frames.svg") no-repeat -213px -346px; }
+  .outerframe.guestbook .frame:hover {
+    background: url("/images/sprites.svg") no-repeat -213px -346px; }
+
+#guestbook .outerframe.guestbook .frame {
+  background: url("/images/sprites.svg") no-repeat -213px -346px; }
 
 body {
   font-size: 18px;
@@ -1498,6 +1522,11 @@ body {
       width: 500px;
       margin: auto;
       text-align: justify; }
+      body .content .wrapper h1 {
+        font-size: 36px;
+        line-height: 54px; }
+      body .content .wrapper p {
+        margin: 20px 0; }
   body .gbpg {
     font-family: Quirky;
     float: left;
@@ -1577,6 +1606,7 @@ a.frame {
     #home .content .welcome .frame {
       margin: auto; }
   #home .content .countdown {
+    font-family: Quirky;
     margin: 20px 0;
     height: 172px;
     margin: 50px 0; }
@@ -1585,44 +1615,57 @@ a.frame {
     #home .content .countdown .days {
       float: left;
       padding: 0 10px;
-      margin-top: -10px; }
+      margin-top: 15px;
+      font-size: 36px; }
       #home .content .countdown .days .number {
-        font-size: 63px;
-        line-height: 94.5px;
+        font-size: 81px;
         margin-right: 5px; }
     #home .content .countdown .hours, #home .content .countdown .minutes {
       text-align: left;
-      margin-top: 5px;
+      font-size: 21.6px;
+      margin-top: 0px;
       margin-left: 180px; }
       #home .content .countdown .hours .number, #home .content .countdown .minutes .number {
-        font-size: 36px;
+        font-size: 54px;
         margin-right: 5px; }
 
 #venue #slides {
   display: none; }
+  #venue #slides .slidesjs-navigation {
+    color: black; }
+    #venue #slides .slidesjs-navigation:hover {
+      color: #56008c;
+      text-decoration: none; }
   #venue #slides .slidesjs-pagination {
+    margin-top: 5px;
     float: right;
     list-style: none; }
     #venue #slides .slidesjs-pagination li {
       float: left;
-      margin: 0 1px; }
+      margin: 0 3px; }
       #venue #slides .slidesjs-pagination li a {
         display: block;
-        width: 13px;
-        float: left; }
-        #venue #slides .slidesjs-pagination li a.active {
-          text-decoration: underline; }
+        width: 14px;
+        height: 0;
+        padding-top: 14px;
+        background: url("/images/sprites.svg") no-repeat -874px -503px;
+        float: left;
+        overflow: hidden; }
+        #venue #slides .slidesjs-pagination li a.active, #venue #slides .slidesjs-pagination li a:hover {
+          background: url("/images/sprites.svg") no-repeat -842px -503px; }
+#venue .address {
+  margin-top: 0;
+  margin-left: 50px; }
 
 #rsvp form {
   font-family: Quirky;
-  background: url("/images/frames.svg") no-repeat -754px -11px;
+  background: url("/images/sprites.svg") no-repeat -754px -11px;
   width: 500px;
   height: 420px;
   padding-top: 80px;
   padding-left: 90px;
   padding-right: 90px;
-  margin: auto;
-  margin-top: 100px; }
+  margin: auto; }
   #rsvp form h1 {
     font-size: 46px;
     line-height: 46px;

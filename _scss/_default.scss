@@ -62,7 +62,12 @@ body {
             width: 500px;
             margin: auto;
             text-align: justify;
-            
+            h1 {
+                @include fontsize(2);
+            }
+            p {
+                margin: 20px 0;
+            }
         }
     }
     .gbpg {

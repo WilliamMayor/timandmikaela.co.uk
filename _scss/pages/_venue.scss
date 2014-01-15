@@ -1,22 +1,37 @@
 #venue {
     #slides {
         display:none;
+        .slidesjs-navigation {
+            color: black;
+            &:hover {
+                color: $splashcolor;
+                text-decoration: none;
+            }
+        }
         .slidesjs-pagination {
+            margin-top: 5px;
             float: right;
             list-style: none;
             li {
                 float: left;
-                margin: 0 1px;
+                margin: 0 3px;
                 a {
                     display: block;
-                    width: 13px;
+                    width: 14px;
+                    height: 0;
+                    padding-top: 14px;
+                    background: url('/images/sprites.svg') no-repeat -874px -503px;
                     float: left;
-
-                    &.active {
-                        text-decoration: underline;
+                    overflow: hidden;
+                    &.active, &:hover {
+                        background: url('/images/sprites.svg') no-repeat -842px -503px;
                     }
                 }
             }
         }
+    }
+    .address {
+        margin-top: 0;
+        margin-left: 50px;
     }
 }

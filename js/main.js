@@ -22,7 +22,7 @@ VENUE = {
     init: function() {
         $("#slides").slidesjs({
             width: 500,
-            height: 300,
+            height: 283,
             navigation: false
       });
     }
