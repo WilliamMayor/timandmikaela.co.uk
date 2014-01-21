@@ -1,0 +1,17 @@
+#accommodation {
+    .content {
+        h2 {
+            @include fontsize(1.5);
+        }
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            li {
+                a {
+                    display: inline-block;
+                    width: 200px;
+                }
+            }
+        }
+    }
+}

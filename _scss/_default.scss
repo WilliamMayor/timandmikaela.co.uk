@@ -57,7 +57,7 @@ body {
     }
     .content {
         @include span-columns(8);
-        padding: 150px 50px;
+        padding: 150px 50px 0 50px;
         .wrapper {
             width: 500px;
             margin: auto;
