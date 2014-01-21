@@ -1,0 +1,21 @@
+{
+  "name": "timandmikaela.co.uk",
+  "version": "0.1.0",
+  "author": "William Mayor",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WilliamMayor/timandmikaela.co.uk.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-cssc": "*",
+    "grunt-htmlhint": "*",
+    "grunt-jekyll": "*",
+    "matchdep": "*"
+  }
+}

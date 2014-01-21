@@ -1,2 +1,1 @@
-name: timandmikaela.co.uk
-exclude: [README.md, features.txt]
+exclude: [node_modules, Accommodation.docx, CNAME, Gruntfile.js, package.json, README.md]
