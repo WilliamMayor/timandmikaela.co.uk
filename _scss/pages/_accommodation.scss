@@ -6,7 +6,7 @@
         ul {
             margin-left: 20px;
             margin-bottom: 20px;
-            li {
+            &.listing {
                 a {
                     display: inline-block;
                     width: 200px;
