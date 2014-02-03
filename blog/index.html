@@ -1,0 +1,15 @@
+---
+layout: default
+title: timandmikaela.co.uk | Blog
+---
+<h1>Our Blog</h1>
+<p>Here's where we keep a little insight into the hectic life of a bride and the bemused/bewildered life of a groom. We'll add posts as and when interesting things happen, so come back soon!</p>
+
+<h2>Posts</h2>
+<ul>
+    {% for post in site.posts %}
+    <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>

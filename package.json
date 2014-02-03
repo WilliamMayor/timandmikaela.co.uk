@@ -14,7 +14,6 @@
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
     "grunt-cssc": "*",
-    "grunt-htmlhint": "*",
     "grunt-jekyll": "*",
     "matchdep": "*"
   }

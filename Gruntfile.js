@@ -5,13 +5,6 @@ module.exports = function(grunt){
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         watch: {
-            html: {
-                files: ['_site/**/*.html'],
-                tasks: ['htmlhint'],
-                options: {
-                  livereload: true,
-                }
-            },
             css: {
                 files: ['_scss/**/*.scss'],
                 tasks: ['css'],
@@ -27,27 +20,11 @@ module.exports = function(grunt){
                 }
             },
             jekyll: {
-                files: ['**/*.html', 'main.min.*', 'fonts/**/*', 'images/**/*'],
+                files: ['**/*.html', 'main.min.*', 'fonts/**/*', 'images/**/*', '**/*.md'],
                 tasks: ['jekyll:build'],
                 options: {
                   livereload: true,
                 }
-            }
-        },
-        htmlhint: {
-            build: {
-                options: {
-                    'tag-pair': true,
-                    'tagname-lowercase': true,
-                    'attr-lowercase': true,
-                    'attr-value-double-quotes': true,
-                    'doctype-first': true,
-                    'spec-char-escape': true,
-                    'id-unique': true,
-                    'head-script-disabled': true,
-                    'style-disabled': true
-                },
-                src: ['_site/**/*.html']
             }
         },
         jekyll: {
