@@ -3,15 +3,16 @@
         h2 {
             @include fontsize(1.5);
         }
+        ul.listing {
+            margin-left: 40px;
+            a {
+                display: inline-block;
+                width: 200px;
+            }
+        }
         ul.contact {
             margin-left: 20px;
             margin-bottom: 20px;
-            &.listing {
-                a {
-                    display: inline-block;
-                    width: 200px;
-                }
-            }
             ul.address {
                 margin-left: 40px;
                 margin-top: -26px;
