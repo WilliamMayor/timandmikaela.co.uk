@@ -1,5 +1,6 @@
 ---
 layout: default
+name: blog
 title: The Engagement Party
 ---
 # The Engagement Party

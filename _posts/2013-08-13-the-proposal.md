@@ -1,5 +1,6 @@
 ---
 layout: default
+name: blog
 title: The Proposal
 ---
 # The Proposal
