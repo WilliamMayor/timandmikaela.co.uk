@@ -103,6 +103,7 @@ body {
         @include omega();
         font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
         font-weight: 300;
+        padding: 20px 0;
         ul {
             @include span-columns(6 of 12);
             &.bride {

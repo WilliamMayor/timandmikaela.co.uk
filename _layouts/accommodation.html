@@ -1,0 +1,23 @@
+---
+layout: default
+name: accommodation
+---
+<h1>{{ page.n }}</h1>
+<p>{{ page.d }}</p>
+
+<h2>Contact</h2>
+<ul class="contact">
+    <li>{{ page.c }}</li>
+    {% if page.t %}<li><span>T:</span><a href="tel:{{ page.t | replace: ' ', '' }}">{{ page.t }}</a></li>{% endif %}
+    {% if page.m %}<li><span>M:</span><a href="tel:{{ page.m | replace: ' ', '' }}">{{ page.m }}</a></li>{% endif %}
+    {% if page.e %}<li><span>E:</span><a href="mailto:{{ page.e }}">{{ page.e }}</a></li>{% endif %}
+    {% if page.w %}<li><span>W:</span><a href="http://{{ page.w }}" target="_blank">{{ page.w }}</a></li>{% endif %}
+    {% if page.a %}<li><span>A:</span>
+        <ul class="address">
+        {% for l in page.a %}
+            <li>{{ l }}</li>
+        {% endfor %}
+        </ul>
+    </li>{% endif %}
+</ul>
+<iframe src="{{ page.g }}" width="500" height="400" frameborder="0" style="border:0"></iframe>
