@@ -4,6 +4,7 @@ body {
     min-width: 900px;
     font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: 300;
+    background-image: url('/images/background.jpg');
     header {
         @include span-columns(12);
         @include omega();
