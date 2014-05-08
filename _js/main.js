@@ -2,7 +2,7 @@ HOME = {
     init: function() {
         HOME.countdown();
         window.setInterval(HOME.countdown, 1000);
-    }, 
+    },
     countdown: function() {
         var tick = Date.now();
         var tock = new Date(2015, 7, 1, 14, 0, 0);
@@ -26,7 +26,7 @@ VENUE = {
             navigation: false
       });
     }
-}
+};
 COMMON = {
     init: function() {
     }
