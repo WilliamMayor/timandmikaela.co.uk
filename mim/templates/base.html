@@ -12,7 +12,7 @@
             </style>
         <![endif]-->
     </head>
-    <body class="{% block page %}{% endblock %}">
+    <body class="{{ page | default('') }}">
         <div class="wrap">
             <header>
                 <div class="logo">

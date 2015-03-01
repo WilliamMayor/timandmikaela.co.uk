@@ -2,11 +2,11 @@ $header-height: 160px;
 $footer-height: 110px;
 $header-logo-width: 200px;
 $footer-logo-width: 150px;
-$spacer: 20px;
 
 html, body {
     height: 100%;
     min-width: 870px;
+    background-color: $off-white;
 }
 body:before {
     content: "";
@@ -54,7 +54,6 @@ main {
     margin-left: $header-logo-width;
     margin-right: $spacer;
     max-width: 800px;
-    background-color: $off-white;
 }
 
 footer {

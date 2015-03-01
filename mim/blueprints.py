@@ -5,7 +5,7 @@ public = Blueprint('public', __name__, template_folder='templates')
 
 @public.route('/', methods=['GET'])
 def home():
-    return render_template('base.html')
+    return render_template('home.html')
 
 
 @public.route('/accommodation/', methods=['GET'])
