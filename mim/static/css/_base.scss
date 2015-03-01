@@ -1,0 +1,97 @@
+$header-height: 160px;
+$footer-height: 110px;
+$header-logo-width: 200px;
+$footer-logo-width: 150px;
+$spacer: 20px;
+
+html, body {
+    height: 100%;
+    min-width: 870px;
+}
+body:before {
+    content: "";
+    height: 100%;
+    float: left;
+    width: 0;
+    margin-top: -32767px;
+}
+.wrap {
+    min-height: 100%;
+}
+
+header {
+    min-width: 600px;
+    padding: $spacer;
+    margin-bottom: $spacer;
+    background-color: $dark-purple;
+    height: $header-height;
+    color: $off-white;
+    a {
+        color: $off-white;
+    }
+    .logo {
+        float: left;
+        margin-right: $spacer;
+        img {
+            width: $header-logo-width;
+        }
+    }
+    .links {
+        vertical-align: top;
+        nav {
+            ul {
+                li {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+main {
+    overflow: auto;
+    padding-bottom: $footer-height + 2 * $spacer;;
+    margin-left: $header-logo-width;
+    margin-right: $spacer;
+    max-width: 800px;
+    background-color: $off-white;
+}
+
+footer {
+    position: relative;
+    margin-top: -$footer-height;
+    height: $footer-height;
+    clear: both;
+
+    background-color: $dark-purple;
+    color: $off-white;
+    a {
+        color: $off-white;
+    }
+    nav {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: $spacer;
+        margin-left: $spacer;
+        max-width: 400px;
+        li {
+            display: inline-block;
+        }
+    }
+    .logo {
+        display: inline-block;
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: -35px;
+        vertical-align: top;
+        img {
+            width: 150px;
+        }
+    }
+    .contact {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: $spacer;
+        margin-right: $spacer;
+    }
+}

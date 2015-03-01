@@ -1,0 +1,5 @@
+MIM.home = {
+    init: function() {
+
+    }
+};
