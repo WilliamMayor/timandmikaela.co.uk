@@ -37,7 +37,10 @@
                 </div>
             </header>
             <h1 class="print-only">Tim &amp; Mikaela's Wedding</h1>
-            <main role="main">{% block content %}{{ lipsum() }}{% endblock %}</main>
+            <main role="main">
+                <div class="sidebar">{% block sidebar %}{% endblock %}</div>
+                <div class="content">{% block content %}{{ lipsum() }}{% endblock %}</div>
+            </main>
         </div>
         <footer>
             <nav><ul>

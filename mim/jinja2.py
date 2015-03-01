@@ -3,7 +3,7 @@ import string
 
 def filter_filter(_list, **kwargs):
     return filter(
-        lambda li: all([getattr(li, k) == v] for k, v in kwargs.iteritems()),
+        lambda li: all([getattr(li, k) == v for k, v in kwargs.iteritems()]),
         _list)
 
 

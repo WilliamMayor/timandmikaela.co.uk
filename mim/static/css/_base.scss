@@ -20,9 +20,8 @@ body:before {
 }
 
 header {
-    min-width: 600px;
     padding: $spacer;
-    margin-bottom: $spacer;
+    margin-bottom: 3 * $spacer;
     background-color: $dark-purple;
     height: $header-height;
     color: $off-white;
@@ -50,10 +49,23 @@ header {
 
 main {
     overflow: auto;
-    padding-bottom: $footer-height + 2 * $spacer;;
-    margin-left: $header-logo-width;
-    margin-right: $spacer;
-    max-width: 800px;
+    padding-bottom: $footer-height + 2 * $spacer;
+    position: relative;
+    .sidebar {
+        position: absolute;
+        width: $header-logo-width;
+        margin-right: $spacer;
+        padding-left: $spacer;
+        h2 {
+            font-size: 1.5em;
+            margin-top: 2 * $spacer;
+        }
+    }
+    .content {
+        margin-right: $spacer;
+        margin-left: $header-logo-width + $spacer;
+        max-width: 800px;
+    }
 }
 
 footer {

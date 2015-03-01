@@ -50,13 +50,13 @@
     <h2>Accommodation</h2>
     <ul class="bb">
         <li>B&amp;Bs</li>
-        {% for a in accommodation | filter(type='bb') | sort('name') %}
+        {% for a in accommodation | filter(type='bb') | sort(attribute='name') %}
             <li><a href="{{ url_for('public.accommodation', place=a.url_name) }}">{{ a.name }}</a></li>
         {% endfor %}
     </ul>
     <ul class="hotel">
         <li>Hotels</li>
-        {% for a in accommodation | filter(type='hotel') | sort('name') %}
+        {% for a in accommodation | filter(type='hotel') | sort(attribute='name') %}
             <li><a href="{{ url_for('public.accommodation', place=a.url_name) }}">{{ a.name }}</a></li>
         {% endfor %}
     </ul>
