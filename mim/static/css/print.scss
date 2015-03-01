@@ -1,0 +1,11 @@
+@import "main";
+
+header, footer {
+    display: none;
+}
+main {
+    margin-left: $spacer;
+}
+.print-only {
+    display: block;
+}

@@ -9,6 +9,13 @@ css = Bundle(
     depends=['css/*.scss', 'css/base/*.scss'])
 assets.register('css', css)
 
+print_css = Bundle(
+    'css/print.scss',
+    filters='scss,cssmin',
+    output='print.min.css',
+    depends=['css/*.scss', 'css/base/*.scss'])
+assets.register('print_css', print_css)
+
 js = Bundle(
     'js/vendor/jquery-1.11.2.min.js',
     Bundle(

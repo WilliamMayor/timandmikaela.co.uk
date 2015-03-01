@@ -5,7 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-        {% assets "css" %}<link rel="stylesheet" href="{{ ASSET_URL }}" />{% endassets %}
+        {% assets "css" %}<link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" />{% endassets %}
+        {% assets "print_css" %}<link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" media="print" />{% endassets %}
         <!--[if !IE 7]>
             <style type="text/css">
                 .wrap {display:table;height:100%}
@@ -34,6 +35,7 @@
                     </ul></nav>
                 </div>
             </header>
+            <h1 class="print-only">Tim &amp; Mikaela's Wedding</h1>
             <main role="main">{% block content %}{{ lipsum() }}{% endblock %}</main>
         </div>
         <footer>
