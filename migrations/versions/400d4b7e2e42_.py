@@ -19,7 +19,7 @@ def upgrade():
     op.create_table('accommodation',
     sa.Column('aid', sa.Integer(), nullable=False),
     sa.Column('name', sa.Text(), nullable=False),
-    sa.Column('type', sa.Enum(['bb', 'hotel'], name='accommodation_type_enum'), nullable=False),
+    sa.Column('type', sa.Enum('bb', 'hotel', name='accommodation_type_enum'), nullable=False),
     sa.Column('distance', sa.Text(), nullable=False),
     sa.Column('price', sa.Text(), nullable=False),
     sa.Column('description', sa.Text(), nullable=False),
