@@ -7,7 +7,7 @@
         <span class="distance">{{ a.distance }}</span>
         <span class="price">{{ a.price }}</span>
     </p>
-    {% for p in a.description | split('\n') %}<p>{{ p }}</p>{% endfor %}
+    {% for p in a.description | split('\r\r') %}<p>{{ p }}</p>{% endfor %}
     <ul class="details">
         <li class="name">{{ a.contact_name }}</li>
         {% if a.contact_telephone %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% set page="public blog" %}
+{% set title="Blog | {{ post.name }}" %}
+{% block content %}
+    <h3>{{ post.name }}</h3>
+    <p class="date">{{ post.date | just_date }}</p>
+    {% for p in post.post | split('\r\r') %}<p>{{ p }}</p>{% endfor %}
+{% endblock %}
+
+{% block sidebar %}
+    <h2>Blog</h2>
+    <ul class="posts">
+        {% for p in posts | sort(attribute='date') %}
+            <li><a href="{{ url_for('public.blog', post=p.url_name) }}">{{ p.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

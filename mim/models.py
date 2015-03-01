@@ -31,3 +31,14 @@ class Accommodation(db.Model):
     @property
     def url_name(self):
         return self.name.lower().replace(' ', '')
+
+
+class BlogPost(db.Model):
+    bid = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Text, nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
+    post = db.Column(db.Text, nullable=False)
+
+    @property
+    def url_name(self):
+        return self.name.lower().replace(' ', '')

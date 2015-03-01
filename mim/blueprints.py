@@ -2,7 +2,7 @@ import requests
 from flask import (
     Blueprint, render_template, redirect, url_for, abort, current_app)
 
-from mim.models import Accommodation
+from mim.models import Accommodation, BlogPost
 from mim.forms import RSVPForm
 
 public = Blueprint('public', __name__, template_folder='templates')
@@ -77,7 +77,16 @@ def giftlist():
 @public.route('/blog/', methods=['GET'])
 @public.route('/blog/<post>/', methods=['GET'])
 def blog(post=None):
-    return 'OK'
+    posts = BlogPost.query.order_by(BlogPost.date).all()
+    if post is None:
+        return redirect(url_for('public.blog', post=posts[0].url_name))
+    for p in posts:
+        if p.url_name == post:
+            break
+    else:
+        abort(404)
+    print p.post.split('\n')
+    return render_template('blog.html', post=p, posts=posts)
 
 
 @public.route('/photos/', methods=['GET'])
@@ -90,5 +99,3 @@ def photos(album=None):
 @public.route('/guestbook/<entry>/', methods=['GET'])
 def guestbook(entry=None):
     return 'OK'
-
-
