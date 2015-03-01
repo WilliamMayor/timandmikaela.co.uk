@@ -1,6 +1,7 @@
 MIM.home = {
     init: function() {
         MIM.home.countdown();
+        $(".countdown").show();
         window.setInterval(MIM.home.countdown, 1000);
     },
     countdown: function() {

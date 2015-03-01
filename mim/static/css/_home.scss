@@ -1,4 +1,7 @@
 body.home {
+    .countdown {
+        display: none;
+    }
     .date, .countdown {
         text-align: center;
         margin-top: $spacer;
