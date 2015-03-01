@@ -1,0 +1,33 @@
+#slides {
+    display: none;
+    width: 600px;
+    margin: auto;
+    .slidesjs-navigation {
+        color: #000;
+        &:hover {
+            color: $dark-purple;
+            text-decoration: none;
+        }
+    }
+    .slidesjs-pagination {
+        margin-top: 5px;
+        float: right;
+        list-style: none;
+        li {
+            float: left;
+            margin: 0 3px;
+            a {
+                color: #000;
+                &:hover, &.active {
+                    color: $dark-purple;
+                    i:before {
+                        content: "\f111";
+                    }
+                }
+                i:before {
+                    content: "\f10c";
+                }
+            }
+        }
+    }
+}

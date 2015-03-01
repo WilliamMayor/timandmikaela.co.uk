@@ -31,7 +31,7 @@ def timetable():
 
 @public.route('/venue/', methods=['GET'])
 def venue():
-    return 'OK'
+    return render_template('venue.html')
 
 
 @public.route('/rsvp/', methods=['GET', 'POST'])

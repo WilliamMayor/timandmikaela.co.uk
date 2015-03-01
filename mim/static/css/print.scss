@@ -4,7 +4,12 @@ header, footer {
     display: none;
 }
 main {
-    margin-left: $spacer;
+    .sidebar {
+        display: none;
+    }
+    .content {
+        margin-left: $spacer;
+    }
 }
 .print-only {
     display: block;

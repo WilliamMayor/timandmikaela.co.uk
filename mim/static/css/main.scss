@@ -4,10 +4,13 @@
 @import "base/base";
 @import "neat/neat";
 
+@import "slides";
+
 @import "base";
 @import "home";
 @import "timetable";
 @import "accommodation";
+@import "venue";
 
 .print-only {
     display: none;

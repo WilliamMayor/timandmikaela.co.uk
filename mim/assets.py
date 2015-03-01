@@ -18,9 +18,12 @@ assets.register('print_css', print_css)
 
 js = Bundle(
     'js/vendor/jquery-1.11.2.min.js',
+    'js/vendor/jquery.slides.min.js',
     Bundle(
         'js/mim.js',
+        'js/slides.js',
         'js/home.js',
+        'js/venue.js',
         filters='rjsmin',
         depends='js/*.js'),
     output='main.min.js')

@@ -1,0 +1,14 @@
+.public.venue {
+    #slides {
+        margin-top: $spacer;
+    }
+    .details {
+        margin: 2 * $spacer $spacer;
+        i {
+            color: #666;
+        }
+    }
+    .map {
+        text-align: center;
+    }
+}
