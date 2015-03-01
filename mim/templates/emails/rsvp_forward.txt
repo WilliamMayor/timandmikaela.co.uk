@@ -1,0 +1,13 @@
+Hi Tim and Mikaela,
+
+You got an RSVP from the website:
+
+Name: {{ form.name.data }}
+Email: {{ form.email.data | default('Unknown') }}
+Response: {{ form.response.data.title() }}{% if form.response.data == 'accept' %}
+Starter: {{ form.starter.data }}
+{% endif %}
+
+All the best,
+
+The RSVP Bot

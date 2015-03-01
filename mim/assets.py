@@ -23,7 +23,7 @@ js = Bundle(
         'js/mim.js',
         'js/slides.js',
         'js/home.js',
-        'js/venue.js',
+        'js/rsvp.js',
         filters='rjsmin',
         depends='js/*.js'),
     output='main.min.js')

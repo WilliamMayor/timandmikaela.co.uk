@@ -35,17 +35,18 @@ $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
 $dark-purple: #56008C;
 $off-white: #F7FDFA;
+$red: #ff0033;
 
 // Background Color
 $base-background-color: white;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$base-accent-color: $blue;
+$base-accent-color: $dark-purple;
 
 // Link Colors
 $base-link-color: $base-accent-color;
-$hover-link-color: darken($base-accent-color, 15);
+$hover-link-color: rgba(86, 00, 140, .8);
 $base-button-color: $base-link-color;
 $hover-button-color: $hover-link-color;
 

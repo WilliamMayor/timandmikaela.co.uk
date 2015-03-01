@@ -1,0 +1,41 @@
+.public.rsvp {
+    .container {
+        text-align: center;
+    }
+    form {
+        text-align: left;
+        background-color: #fff;
+        border: 1px solid $base-border-color;
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        padding: $spacer;
+        display: inline-block;
+        input, label, select {
+            display: inline-block;
+        }
+        .response {
+            margin-left: 4 * $spacer;
+        }
+        .name, .email {
+            span {
+                display: inline-block;
+                width: 160px;
+                text-align: right;
+                margin-right: $spacer;
+            }
+            input {
+                width: 300px;
+            }
+        }
+        .starter {
+            height: 50px;
+        }
+        .errors {
+            margin-left: 180px;
+            font-size: smaller;
+            margin-top: - $base-spacing / 2;
+            margin-bottom: $base-spacing / 2;
+            color: $red;
+        }
+    }
+}

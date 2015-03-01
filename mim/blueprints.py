@@ -1,6 +1,9 @@
-from flask import Blueprint, render_template, redirect, url_for, abort
+import requests
+from flask import (
+    Blueprint, render_template, redirect, url_for, abort, current_app)
 
 from mim.models import Accommodation
+from mim.forms import RSVPForm
 
 public = Blueprint('public', __name__, template_folder='templates')
 
@@ -36,7 +39,34 @@ def venue():
 
 @public.route('/rsvp/', methods=['GET', 'POST'])
 def rsvp():
-    return 'OK'
+    form = RSVPForm()
+    if form.validate_on_submit():
+        if form.email.data:
+            requests.post(
+                '%s/messages' % current_app.config['MAILGUN_URL'],
+                auth=('api', current_app.config['MAILGUN_API_KEY']),
+                data={
+                    'from': 'Tim and Mikaela <thecouple@timandmikaela.co.uk>',
+                    'to': form.email.data,
+                    'subject': 'RSVP Confirmation',
+                    'text': render_template(
+                        'emails/rsvp_confirmation.txt', form=form)})
+        requests.post(
+            '%s/messages' % current_app.config['MAILGUN_URL'],
+            auth=('api', current_app.config['MAILGUN_API_KEY']),
+            data={
+                'from': 'RSVP Bot <rsvpbot@timandmikaela.co.uk>',
+                'to': 'thecouple@timandmikaela.co.uk',
+                'subject': 'You Got an RSVP',
+                'text': render_template(
+                    'emails/rsvp_forward.txt', form=form)})
+        return redirect(url_for('public.rsvp_thanks'))
+    return render_template('rsvp.html', form=form)
+
+
+@public.route('/rsvp/thanks/', methods=['GET'])
+def rsvp_thanks():
+    return render_template('rsvp_thanks.html')
 
 
 @public.route('/giftlist/', methods=['GET'])
@@ -60,3 +90,5 @@ def photos(album=None):
 @public.route('/guestbook/<entry>/', methods=['GET'])
 def guestbook(entry=None):
     return 'OK'
+
+
