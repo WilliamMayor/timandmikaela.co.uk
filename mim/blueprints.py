@@ -16,7 +16,7 @@ def accommodation(place=None):
 
 @public.route('/timetable/', methods=['GET'])
 def timetable():
-    return 'OK'
+    return render_template('timetable.html')
 
 
 @public.route('/venue/', methods=['GET'])
