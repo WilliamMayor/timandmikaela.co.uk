@@ -6,11 +6,13 @@ from contextlib import contextmanager
 import sh
 from flask import current_app
 from flask.ext.script import Manager, prompt
+from flask.ext.migrate import MigrateCommand
 from sqlalchemy import create_engine
 
 import mim
 
 manager = Manager(usage="Perform database operations")
+manager.add_command('migrate', MigrateCommand)
 
 
 def safe_to_print_url(url):

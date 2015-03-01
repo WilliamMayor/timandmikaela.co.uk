@@ -2,7 +2,7 @@ import os
 
 from flask import Flask
 
-from mim import blueprints, assets
+from mim import blueprints, assets, models
 
 
 def boolify(s):
@@ -32,6 +32,7 @@ def create_app():
         if k in os.environ})
 
     assets.init_app(app)
+    models.init_app(app)
 
     app.register_blueprint(blueprints.public)
     return app
