@@ -2,7 +2,7 @@ import os
 
 from flask import Flask
 
-from mim import blueprints, assets, models
+from mim import blueprints, assets, models, jinja2
 
 
 def boolify(s):
@@ -33,6 +33,7 @@ def create_app():
 
     assets.init_app(app)
     models.init_app(app)
+    jinja2.init_app(app)
 
     app.register_blueprint(blueprints.public)
     return app

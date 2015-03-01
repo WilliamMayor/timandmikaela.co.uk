@@ -14,12 +14,12 @@ def init_app(app):
 class Accommodation(db.Model):
     aid = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text, nullable=False)
+    description = db.Column(db.Text, nullable=False)
     type = db.Column(
         db.Enum(
-            ['bb', 'hotel'], name='accommodation_type_enum'), nullable=False)
+            'bb', 'hotel', name='accommodation_type_enum'), nullable=False)
     distance = db.Column(db.Text, nullable=False)
     price = db.Column(db.Text, nullable=False)
-    description = db.Column(db.Text, nullable=False)
     contact_name = db.Column(db.Text, nullable=False)
     contact_telephone = db.Column(db.Text)
     contact_mobile = db.Column(db.Text)
@@ -27,3 +27,7 @@ class Accommodation(db.Model):
     contact_address = db.Column(db.Text)
     contact_website = db.Column(db.Text)
     google_maps_url = db.Column(db.Text)
+
+    @property
+    def url_name(self):
+        return self.name.lower().replace(' ', '')

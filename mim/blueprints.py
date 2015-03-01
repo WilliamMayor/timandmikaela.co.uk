@@ -1,4 +1,6 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect, url_for, abort
+
+from mim.models import Accommodation
 
 public = Blueprint('public', __name__, template_folder='templates')
 
@@ -11,7 +13,15 @@ def home():
 @public.route('/accommodation/', methods=['GET'])
 @public.route('/accommodation/<place>/', methods=['GET'])
 def accommodation(place=None):
-    return 'OK'
+    all = Accommodation.query.order_by(Accommodation.name).all()
+    if place is None:
+        return redirect(url_for('public.accommodation', place=all[0].url_name))
+    for a in all:
+        if a.url_name == place:
+            break
+    else:
+        abort(404)
+    return render_template('accommodation.html', a=a, accommodation=all)
 
 
 @public.route('/timetable/', methods=['GET'])
