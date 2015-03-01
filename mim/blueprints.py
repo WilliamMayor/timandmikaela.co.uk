@@ -31,7 +31,7 @@ def rsvp():
 
 @public.route('/giftlist/', methods=['GET'])
 def giftlist():
-    return 'OK'
+    return render_template('giftlist.html')
 
 
 @public.route('/blog/', methods=['GET'])
