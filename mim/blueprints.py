@@ -2,8 +2,8 @@ import requests
 from flask import (
     Blueprint, render_template, redirect, url_for, abort, current_app)
 
-from mim.models import Accommodation, BlogPost
-from mim.forms import RSVPForm
+from mim.models import db, Accommodation, BlogPost, GuestBookEntry
+from mim.forms import RSVPForm, GuestBookForm
 
 public = Blueprint('public', __name__, template_folder='templates')
 
@@ -85,7 +85,6 @@ def blog(post=None):
             break
     else:
         abort(404)
-    print p.post.split('\n')
     return render_template('blog.html', post=p, posts=posts)
 
 
@@ -95,7 +94,48 @@ def photos(album=None):
     return 'OK'
 
 
-@public.route('/guestbook/', methods=['GET', 'POST'])
+@public.route('/guestbook/', methods=['GET'])
 @public.route('/guestbook/<entry>/', methods=['GET'])
 def guestbook(entry=None):
-    return 'OK'
+    entries = GuestBookEntry.query.order_by(GuestBookEntry.date).all()
+    if entry is None:
+        return redirect(
+            url_for('public.guestbook', entry=entries[0].url_name))
+    for e in entries:
+        if e.url_name == entry:
+            break
+    else:
+        abort(404)
+    return render_template('guestbook_entry.html', entry=e, entries=entries)
+
+
+@public.route('/guestbook/sign/', methods=['GET', 'POST'])
+def guestbook_sign():
+    form = GuestBookForm()
+    if form.validate_on_submit():
+        entry = GuestBookEntry()
+        form.populate_obj(entry)
+        db.session.add(entry)
+        db.session.commit()
+        requests.post(
+            '%s/messages' % current_app.config['MAILGUN_URL'],
+            auth=('api', current_app.config['MAILGUN_API_KEY']),
+            data={
+                'from': 'Tim and Mikaela <thecouple@timandmikaela.co.uk>',
+                'to': form.email.data,
+                'subject': 'Thanks for Signing Our Guest Book',
+                'text': render_template(
+                    'emails/guestbook_thanks.txt', entry=entry)})
+        requests.post(
+            '%s/messages' % current_app.config['MAILGUN_URL'],
+            auth=('api', current_app.config['MAILGUN_API_KEY']),
+            data={
+                'from': 'Guest Book Bot <guestbookbot@timandmikaela.co.uk>',
+                'to': 'thecouple@timandmikaela.co.uk',
+                'subject': 'Someone Signed the Guest Book!',
+                'text': render_template(
+                    'emails/guestbook_forward.txt', entry=entry)})
+        return redirect(
+            url_for('public.guestbook', entry=entry.url_name))
+    entries = GuestBookEntry.query.order_by(GuestBookEntry.date).all()
+    return render_template('guestbook_sign.html', form=form, entries=entries)

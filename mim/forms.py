@@ -1,5 +1,5 @@
 from flask.ext.wtf import Form
-from wtforms import TextField, RadioField, SelectField
+from wtforms import TextField, RadioField, SelectField, TextAreaField
 from wtforms.validators import DataRequired, Optional, Email
 
 
@@ -15,3 +15,9 @@ class RSVPForm(Form):
         (u'Sausage & Mash', u'Sausage & Mash'),
         (u'Prawn Cocktail', u'Prawn Cocktail'),
         (u'Leek & Potato Soup', u'Leek & Potato Soup')])
+
+
+class GuestBookForm(Form):
+    name = TextField(u'Name', validators=[DataRequired()])
+    email = TextField(u'Email', validators=[DataRequired(), Email()])
+    post = TextAreaField(u'Entry', validators=[DataRequired()])

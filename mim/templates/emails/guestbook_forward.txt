@@ -1,0 +1,16 @@
+Hi Tim and Mikaela,
+
+Someone signed the guest book on the website:
+
+Name: {{ entry.name }}
+Email: {{ entry.email }}
+Entry:
+{% for p in entry.post | split('\n') %}
+{{ p }}
+{% endfor %}
+
+Here's a link: {{ url_for('public.guestbook', entry=entry.url_name, _external=True) }}
+
+All the best,
+
+The Guest Book Bot

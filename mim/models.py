@@ -1,3 +1,5 @@
+import datetime
+
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.migrate import Migrate
 
@@ -42,3 +44,18 @@ class BlogPost(db.Model):
     @property
     def url_name(self):
         return self.name.lower().replace(' ', '')
+
+
+class GuestBookEntry(db.Model):
+    eid = db.Column(db.Integer, primary_key=True)
+    date = db.Column(
+        db.DateTime, nullable=False, default=datetime.datetime.now)
+    name = db.Column(db.Text, nullable=False)
+    email = db.Column(db.Text, nullable=False)
+    post = db.Column(db.Text, nullable=False)
+
+    @property
+    def url_name(self):
+        return '%s-%s' % (
+            self.date.strftime('%Y-%m-%d'),
+            self.name.lower().replace(' ', ''))
