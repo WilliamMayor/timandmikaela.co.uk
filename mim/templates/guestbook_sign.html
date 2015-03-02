@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% set page="public guestbook sign" %}
+{% set title="Guest Book | Sign" %}
+{% block content %}
+<h2>Sign the Guest Book</h2>
+<div class="container"><form method="POST">
+    {{ form.hidden_tag() }}
+    {% if form.csrf_token.errors %}
+        <ul class="errors csrf_token">{% for error in form.csrf_token.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}</ul>
+    {% endif %}
+    <div class="name">
+        {{ form.name.label }}
+        {{ form.name(placeholder='Your name...') }}
+        {% if form.name.errors %}
+            <ul class="errors name">{% for error in form.name.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}</ul>
+        {% endif %}
+    </div>
+    <div class="email">
+        {{ form.email.label }}
+        {{ form.email(placeholder='Your email...') }}
+        {% if form.email.errors %}
+            <ul class="errors email">{% for error in form.email.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}</ul>
+        {% endif %}
+    </div>
+    <div class="post">
+        {{ form.post.label }}
+        {{ form.post(placeholder='Your post...') }}
+        {% if form.post.errors %}
+            <ul class="errors post">{% for error in form.post.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}</ul>
+        {% endif %}
+    </div>
+    <div class="submit"><input type="submit" value="Sign" /></div>
+</form></div>
+{% endblock %}
+
+{% block sidebar %}
+    <h2>Guest Book</h2>
+    <a href="{{ url_for('public.guestbook_sign') }}">Sign the Book</a>
+    <ul class="entries">
+        <li>Guests</li>
+        {% for e in entries | sort(attribute='date') %}
+            <li><a href="{{ url_for('public.guestbook', entry=e.url_name) }}">{{ e.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

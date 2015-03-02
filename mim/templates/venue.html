@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% set page="public venue slides" %}
+{% set title="Venue" %}
+{% block content %}
+<h1>Venue - Crockwell Farm</h1>
+<div id="slides">
+    {% for p in album.photos %}
+        <img src="{{ p.url }}" />
+    {% endfor %}
+    <a href="#previous" class="slidesjs-previous slidesjs-navigation">
+        <i class="fa fa-chevron-left fa-lg"></i>
+    </a>
+    <a href="#next" class="slidesjs-next slidesjs-navigation">
+        <i class="fa fa-chevron-right fa-lg"></i>
+    </a>
+</div>
+<ul class="details">
+    <li class="telephone">
+        <i class="fa fa-fw fa-phone"></i>
+        <a href="tel:01327361358">01327 361358</a>
+    </li>
+    <li class="email">
+        <i class="fa fa-fw fa-envelope-o"></i>
+        <a href="mailto:info@crockwellfarm.co.uk">info@crockwellfarm.co.uk</a>
+    </li>
+    <li class="address">
+        <i class="fa fa-fw fa-home"></i>
+        <span>Crockwell, Eydon, Daventry, Northamptonshire, NN11 3QA</span>
+    </li>
+    <li class="website">
+        <i class="fa fa-fw fa-globe"></i>
+        <a href="http://www.crockwellfarm.co.uk">www.crockwellfarm.co.uk</a>
+    </li>
+</ul>
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d2448.0485380121363!2d-1.1849669999999999!3d52.151627!3m2!1i1024!2i768!4f13.1!3m2!1m1!1s0x0%3A0x64705974a537f4a7!5e0!3m2!1sen!2suk!4v1389776156621" width="500" height="400" frameborder="0" style="border:0"></iframe>
+</div>
+{% endblock %}

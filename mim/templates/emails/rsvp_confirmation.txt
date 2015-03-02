@@ -1,0 +1,16 @@
+Hi {{ form.name.data }},
+
+Thanks for your RSVP, here's what you sent us:
+
+Name: {{ form.name.data }}
+Email: {{ form.email.data | default('Unknown') }}
+Response: {{ form.response.data.title() }}{% if form.response.data == 'accept' %}
+Starter: {{ form.starter.data }}
+{% endif %}
+{% if form.response.data == 'accept' %}
+We're looking forward to seeing you in August
+{% else %}
+We're sorry you couldn't make it
+{% endif %}
+
+Tim and Mikaela x x

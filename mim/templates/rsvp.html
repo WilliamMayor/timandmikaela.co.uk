@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% set page="public rsvp" %}
+{% set title="RSVP" %}
+{% block content %}
+<h2>RSVP</h2>
+<p>Here is our online RSVP form, please fill in one for every person invited (so we can collect your starter choices).</p>
+<div class="container"><form method="POST">
+    {{ form.hidden_tag() }}
+    {% if form.csrf_token.errors %}
+        <ul class="errors csrf_token">{% for error in form.csrf_token.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}</ul>
+    {% endif %}
+    <div class="name"><span>My name is </span>{{ form.name(placeholder='Your name...') }}</div>
+    {% if form.name.errors %}
+        <ul class="errors name">{% for error in form.name.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}</ul>
+    {% endif %}
+    <div class="email"><span>My email address is </span>{{ form.email(placeholder='Your email...') }}</div>
+    {% if form.email.errors %}
+        <ul class="errors email">{% for error in form.email.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}</ul>
+    {% endif %}
+    {% for radio in form.response %}
+        <div class="response">{{ radio }} {{ radio.label }}</div>
+    {% endfor %}
+    {% if form.response.errors %}
+        <ul class="errors response">{% for error in form.response.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}</ul>
+    {% endif %}
+    <div class="starter">
+        <span>and for my starter I would like {{ form.starter }}</span>
+    </div>
+    {% if form.starter.errors %}
+        <ul class="errors starter">{% for error in form.starter.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}</ul>
+    {% endif %}
+    <div class="submit"><input type="submit" value="Send" /></div>
+</form></div>
+{% endblock %}

@@ -1,0 +1,4 @@
+MIM.venue = {
+    init: function() {
+    }
+};

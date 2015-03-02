@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% set page="public home" %}
+{% set title="Home" %}
+{% block content %}
+<h2>Welcome</h2>
+<p>Welcome to Tim and Mikaela's Wedding website. It's got all the information you need about the upcoming big day. Click one of the links above to find out more.</p>
+<p>When's it all happening?</p>
+<h4 class="date">2pm Saturday 1st August 2015</h4>
+<p class="countdown">
+    That's 
+    <span class="days"><span class="number"></span> day<span class="plural"></span></span>, 
+    <span class="hours"><span class="number"></span> hour<span class="plural"></span></span>, and 
+    <span class="minutes"><span class="number"></span> minute<span class="plural"></span></span> from now.
+</p>
+{% endblock %}

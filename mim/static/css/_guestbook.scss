@@ -1,0 +1,48 @@
+.public.guestbook.entry {
+    .entry {
+        background-color: #fff;
+        border: 1px solid $base-border-color;
+        padding: $spacer;
+        width: 500px;
+        margin: $spacer 0;
+    }
+    .name {
+        width: 500px;
+        text-align: right;
+    }
+}
+.public.guestbook.sign {
+    form {
+        margin: $spacer 0;
+        .name, .email {
+            label, input {
+                display: inline-block;
+            }
+            label {
+                width: 100px;
+                text-align: right;
+                margin-right: $spacer;
+            }
+            input {
+                width: 500px;
+            }
+        }
+        .post {
+            textarea {
+                width: 600px + $spacer;
+                min-height: 200px;
+                resize: vertical;
+            }
+            .errors {
+                margin-left: 0;
+            }
+        }
+        .errors {
+            margin-left: 110px + $spacer;
+            font-size: smaller;
+            margin-top: - $base-spacing / 2;
+            margin-bottom: $base-spacing / 2;
+            color: $red;
+        }
+    }
+}

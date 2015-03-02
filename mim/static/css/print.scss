@@ -1,0 +1,16 @@
+@import "main";
+
+header, footer {
+    display: none;
+}
+main {
+    .sidebar {
+        display: none;
+    }
+    .content {
+        margin-left: $spacer;
+    }
+}
+.print-only {
+    display: block;
+}

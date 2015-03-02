@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tim and Mikaela{% if title %} - {{ title }}{% endif %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+        {% assets "css" %}<link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" />{% endassets %}
+        {% assets "print_css" %}<link rel="stylesheet" href="{{ ASSET_URL }}" type="text/css" media="print" />{% endassets %}
+        <!--[if !IE 7]>
+            <style type="text/css">
+                .wrap {display:table;height:100%}
+            </style>
+        <![endif]-->
+    </head>
+    <body class="{{ page | default('') }}">
+        <div class="wrap">
+            <header>
+                <div class="logo">
+                    <a href="{{ url_for('public.home') }}">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" />
+                    </a>
+                </div>
+                <div class="links">
+                    <h1><a href="{{ url_for('public.home') }}">Tim &amp; Mikaela's Wedding</a></h1>
+                    <nav><ul>
+                        <li><a href="{{ url_for('public.accommodation') }}">Accommodation</a> &middot;</li>
+                        <li><a href="{{ url_for('public.timetable') }}">Timetable</a> &middot;</li>
+                        <li><a href="{{ url_for('public.venue') }}">Venue</a> &middot;</li>
+                        <li><a href="{{ url_for('public.rsvp') }}">RSVP</a> &middot;</li>
+                        <li><a href="{{ url_for('public.giftlist') }}">Gift List</a> &middot;</li>
+                        <li><a href="{{ url_for('public.blog') }}">Blog</a> &middot;</li>
+                        <li><a href="{{ url_for('public.photos') }}">Photos</a> &middot;</li>
+                        <li><a href="{{ url_for('public.guestbook') }}">Guest Book</a></li>
+                    </ul></nav>
+                </div>
+            </header>
+            <h1 class="print-only">Tim &amp; Mikaela's Wedding</h1>
+            <main role="main">
+                <div class="sidebar">{% block sidebar %}{% endblock %}</div>
+                <div class="content">{% block content %}{{ lipsum() }}{% endblock %}</div>
+            </main>
+        </div>
+        <footer>
+            <nav><ul>
+                <li><a href="{{ url_for('public.home') }}">Home</a> &middot;</li>
+                <li><a href="{{ url_for('public.accommodation') }}">Accommodation</a> &middot;</li>
+                <li><a href="{{ url_for('public.timetable') }}">Timetable</a> &middot;</li>
+                <li><a href="{{ url_for('public.venue') }}">Venue</a> &middot;</li>
+                <li><a href="{{ url_for('public.rsvp') }}">RSVP</a> &middot;</li>
+                <li><a href="{{ url_for('public.giftlist') }}">Gift List</a> &middot;</li>
+                <li><a href="{{ url_for('public.blog') }}">Blog</a> &middot;</li>
+                <li><a href="{{ url_for('public.photos') }}">Photos</a> &middot;</li>
+                <li><a href="{{ url_for('public.guestbook') }}">Guest Book</a></li>
+            </ul></nav>
+            <div class="logo">
+                <a href="{{ url_for('public.home') }}">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" />
+                </a>
+            </div>
+            <div class="contact">
+                <ul>
+                    <li><a href="mailto:tim@timandmikaela.co.uk">tim@timandmikaela.co.uk</a></li>
+                    <li><a href="mailto:mikaela@timandmikaela.co.uk">mikaela@timandmikaela.co.uk</a></li>
+                </ul>
+            </div>
+        </footer>
+        {% assets "js" %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+    </body>
+</html>

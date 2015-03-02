@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% set page="public accommodation" %}
+{% set title="Accommodation | {{ a.name }}" %}
+{% block content %}
+    <h3>{{ a.name }}</h3>
+    <p class="quick">
+        <span class="distance">{{ a.distance }}</span>
+        <span class="price">{{ a.price }}</span>
+    </p>
+    {% for p in a.description | split('\r\r') %}<p>{{ p }}</p>{% endfor %}
+    <ul class="details">
+        <li class="name">{{ a.contact_name }}</li>
+        {% if a.contact_telephone %}
+            <li class="telephone">
+                <i class="fa fa-fw fa-phone"></i>
+                <a href="tel:{{ a.contact_telephone | replace(' ', '') }}">{{ a.contact_telephone }}</a>
+            </li>
+        {% endif %}
+        {% if a.contact_mobile %}
+            <li class="mobile">
+                <i class="fa fa-fw fa-phone"></i>
+                <a href="tel:{{ a.contact_mobile | replace(' ', '') }}">{{ a.contact_mobile }}</a>
+            </li>
+        {% endif %}
+        {% if a.contact_email %}
+            <li class="email">
+                <i class="fa fa-fw fa-envelope-o"></i>
+                <a href="mailto:{{ a.contact_email }}">{{ a.contact_email }}</a>
+            </li>
+        {% endif %}
+        {% if a.contact_address %}
+            <li class="address">
+                <i class="fa fa-fw fa-home"></i>
+                <span>{{ a.contact_address }}</span>
+            </li>
+        {% endif %}
+        {% if a.contact_website %}
+            <li class="website">
+                <i class="fa fa-fw fa-globe"></i>
+                <a href="http://{{ a.contact_website }}">{{ a.contact_website }}</a>
+            </li>
+        {% endif %}
+    </ul>
+    {% if a.google_maps_url %}
+        <div class="map"><iframe src="{{ a.google_maps_url }}" width="500" height="400" frameborder="0" style="border:0"></iframe></div>
+    {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+    <h2>Accommodation</h2>
+    <ul class="bb">
+        <li>B&amp;Bs</li>
+        {% for a in accommodation | filter(type='bb') | sort(attribute='name') %}
+            <li><a href="{{ url_for('public.accommodation', place=a.url_name) }}">{{ a.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <ul class="hotel">
+        <li>Hotels</li>
+        {% for a in accommodation | filter(type='hotel') | sort(attribute='name') %}
+            <li><a href="{{ url_for('public.accommodation', place=a.url_name) }}">{{ a.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

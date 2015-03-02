@@ -1,0 +1,16 @@
+Hi {{ entry.name }},
+
+Thanks for signing our guest book. Here's what you signed:
+
+Name: {{ entry.name }}
+Email: {{ entry.email }}
+Entry:
+{% for p in entry.post | split('\n') %}
+{{ p }}
+{% endfor %}
+
+Here's a link: {{ url_for('public.guestbook', entry=entry.url_name, _external=True) }}
+
+All the best,
+
+Tim and Mikaela
