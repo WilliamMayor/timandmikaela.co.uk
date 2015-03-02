@@ -4,10 +4,9 @@
 {% block content %}
 <h1>Venue - Crockwell Farm</h1>
 <div id="slides">
-    <img src="/static/images/venue/1.jpg" />
-    <img src="/static/images/venue/2.jpg" />
-    <img src="/static/images/venue/3.jpg" />
-    <img src="/static/images/venue/4.jpg" />
+    {% for p in album.photos %}
+        <img src="{{ p.url }}" />
+    {% endfor %}
     <a href="#previous" class="slidesjs-previous slidesjs-navigation">
         <i class="fa fa-chevron-left fa-lg"></i>
     </a>

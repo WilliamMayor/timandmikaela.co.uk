@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% set page="public photos slides" %}
+{% set title="Photo Albums | {{ album.name }}" %}
+{% block content %}
+    <h3>{{ album.name }}</h3>
+    <div id="slides">
+        {% for p in album.photos %}
+            <img src="{{ p.url }}" />
+        {% endfor %}
+        <a href="#previous" class="slidesjs-previous slidesjs-navigation">
+            <i class="fa fa-chevron-left fa-lg"></i>
+        </a>
+        <a href="#next" class="slidesjs-next slidesjs-navigation">
+            <i class="fa fa-chevron-right fa-lg"></i>
+        </a>
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    <h2>Photos</h2>
+    <ul class="albums">
+        {% for a in albums | sort(attribute='name') %}
+            <li><a href="{{ url_for('public.photos', album=a.url_name) }}">{{ a.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

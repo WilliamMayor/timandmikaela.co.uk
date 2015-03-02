@@ -2,7 +2,7 @@ import requests
 from flask import (
     Blueprint, render_template, redirect, url_for, abort, current_app)
 
-from mim.models import db, Accommodation, BlogPost, GuestBookEntry
+from mim.models import db, Accommodation, BlogPost, GuestBookEntry, PhotoAlbum
 from mim.forms import RSVPForm, GuestBookForm
 
 public = Blueprint('public', __name__, template_folder='templates')
@@ -34,7 +34,7 @@ def timetable():
 
 @public.route('/venue/', methods=['GET'])
 def venue():
-    return render_template('venue.html')
+    return render_template('venue.html', album=PhotoAlbum.query.get(1))
 
 
 @public.route('/rsvp/', methods=['GET', 'POST'])
@@ -91,7 +91,15 @@ def blog(post=None):
 @public.route('/photos/', methods=['GET'])
 @public.route('/photos/<album>/', methods=['GET'])
 def photos(album=None):
-    return 'OK'
+    albums = PhotoAlbum.query.order_by(PhotoAlbum.name).all()
+    if album is None:
+        return redirect(url_for('public.photos', album=albums[0].url_name))
+    for a in albums:
+        if a.url_name == album:
+            break
+    else:
+        abort(404)
+    return render_template('photos.html', album=a, albums=albums)
 
 
 @public.route('/guestbook/', methods=['GET'])

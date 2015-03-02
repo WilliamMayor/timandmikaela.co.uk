@@ -1,7 +1,7 @@
 #slides {
     display: none;
     width: 600px;
-    margin: auto;
+    margin: $spacer auto;
     .slidesjs-navigation {
         color: #000;
         &:hover {
