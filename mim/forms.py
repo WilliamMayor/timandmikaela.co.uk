@@ -6,11 +6,14 @@ from wtforms.validators import DataRequired, Optional, Email
 class RSVPForm(Form):
     name = TextField(u'Your name...', validators=[DataRequired()])
     email = TextField(u'Your email...', validators=[Optional(), Email()])
-    response = RadioField(
-        default='accept',
+    time = RadioField(
         choices=[
-            (u'accept', u'I would be delighted to accept'),
-            (u'decline', u'I must unfortunately decline')])
+            (u'day', u'a day + evening guest'),
+            (u'evening', u'an evening guest')])
+    response = RadioField(
+        choices=[
+            (u'accept', u'would be delighted to accept'),
+            (u'decline', u'must unfortunately decline')])
     starter = SelectField(choices=[
         (u'Sausage & Mash', u'Sausage & Mash'),
         (u'Prawn Cocktail', u'Prawn Cocktail'),

@@ -23,14 +23,28 @@
             <li>{{ error }}</li>
         {% endfor %}</ul>
     {% endif %}
-    {% for radio in form.response %}
-        <div class="response">{{ radio }} {{ radio.label }}</div>
-    {% endfor %}
-    {% if form.response.errors %}
-        <ul class="errors response">{% for error in form.response.errors %}
-            <li>{{ error }}</li>
-        {% endfor %}</ul>
-    {% endif %}
+    <div class="time">
+        <span>I am . . . </span>
+        {% for radio in form.time %}
+            <div class="field">{{ radio }} {{ radio.label }}</div>
+        {% endfor %}
+        {% if form.time.errors %}
+            <ul class="errors">{% for error in form.time.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}</ul>
+        {% endif %}
+    </div>
+    <div class="response">
+        <span>and I . . . </span>
+        {% for radio in form.response %}
+            <div class="field">{{ radio }} {{ radio.label }}</div>
+        {% endfor %}
+        {% if form.response.errors %}
+            <ul class="errors">{% for error in form.response.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}</ul>
+        {% endif %}
+    </div>
     <div class="starter">
         <span>and for my starter I would like {{ form.starter }}</span>
     </div>

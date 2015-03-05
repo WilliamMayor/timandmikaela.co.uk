@@ -13,8 +13,16 @@
         input, label, select {
             display: inline-block;
         }
-        .response {
-            margin-left: 4 * $spacer;
+        .time, .response {
+            span {
+                float: left;
+            }
+            .field {
+                margin-left: 4.5 * $spacer;
+            }
+            .errors {
+                margin-left: 90px;
+            }
         }
         .name, .email {
             span {

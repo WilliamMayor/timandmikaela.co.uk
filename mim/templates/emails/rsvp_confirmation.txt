@@ -4,6 +4,7 @@ Thanks for your RSVP, here's what you sent us:
 
 Name: {{ form.name.data }}
 Email: {{ form.email.data | default('Unknown') }}
+When: {{ form.time.data.title() }}
 Response: {{ form.response.data.title() }}{% if form.response.data == 'accept' %}
 Starter: {{ form.starter.data }}
 {% endif %}
