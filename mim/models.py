@@ -61,18 +61,7 @@ class GuestBookEntry(db.Model):
             self.name.lower().replace(' ', ''))
 
 
-class PhotoAlbum(db.Model):
-    aid = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.Text, nullable=False)
-
-    @property
-    def url_name(self):
-        return self.name.lower().replace(' ', '')
-
-
-class Photo(db.Model):
-    pid = db.Column(db.Integer, primary_key=True)
-    url = db.Column(db.Text, nullable=False)
-    album_id = db.Column(
-        db.Integer, db.ForeignKey('photo_album.aid'), nullable=False)
-    album = db.relationship('PhotoAlbum', backref=db.backref('photos'))
+class User(db.Model):
+    uid = db.Column(db.Integer, primary_key=True)
+    access_token = db.Column(db.Text, nullable=False)
+    refresh_token = db.Column(db.Text, nullable=False)

@@ -1,8 +1,9 @@
 import requests
 from flask import (
     Blueprint, render_template, redirect, url_for, abort, current_app)
+from imgurpython import ImgurClient
 
-from mim.models import db, Accommodation, BlogPost, GuestBookEntry, PhotoAlbum
+from mim.models import db, Accommodation, BlogPost, GuestBookEntry, User
 from mim.forms import RSVPForm, GuestBookForm
 
 public = Blueprint('public', __name__, template_folder='templates')
@@ -34,7 +35,18 @@ def timetable():
 
 @public.route('/venue/', methods=['GET'])
 def venue():
-    return render_template('venue.html', album=PhotoAlbum.query.get(1))
+    u = User.query.get(1)
+    client = ImgurClient(
+        current_app.config['IMGUR_CLIENT_ID'],
+        current_app.config['IMGUR_CLIENT_ID'],
+        access_token=u.access_token,
+        refresh_token=u.refresh_token)
+    album = client.get_album('63Tp6')
+    if client.auth.current_access_token != u.access_token:
+        u.access_token = client.auth.current_access_token
+        db.session.add(u)
+        db.session.commit()
+    return render_template('venue.html', album=album)
 
 
 @public.route('/rsvp/', methods=['GET', 'POST'])
@@ -91,14 +103,27 @@ def blog(post=None):
 @public.route('/photos/', methods=['GET'])
 @public.route('/photos/<album>/', methods=['GET'])
 def photos(album=None):
-    albums = PhotoAlbum.query.order_by(PhotoAlbum.name).all()
     if album is None:
-        return redirect(url_for('public.photos', album=albums[0].url_name))
+        return redirect(url_for('public.photos', album='63Tp6'))
+    u = User.query.get(1)
+    client = ImgurClient(
+        current_app.config['IMGUR_CLIENT_ID'],
+        current_app.config['IMGUR_CLIENT_ID'],
+        access_token=u.access_token,
+        refresh_token=u.refresh_token)
+    albums = client.get_account_albums('timandmikaela')
+    print albums
     for a in albums:
-        if a.url_name == album:
+        if a.id == album:
             break
     else:
         abort(404)
+    a = client.get_album(album)
+    print a
+    if client.auth.current_access_token != u.access_token:
+        u.access_token = client.auth.current_access_token
+        db.session.add(u)
+        db.session.commit()
     return render_template('photos.html', album=a, albums=albums)
 
 

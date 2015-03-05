@@ -2,10 +2,12 @@ import pprint
 import os
 
 from flask import current_app
-from flask.ext.script import Manager, Server
+from flask.ext.script import Manager, Server, prompt
 from flask.ext.script.commands import Clean
+from imgurpython import ImgurClient
 
 from mim import create_app as mim_create_app
+from mim.models import db, User
 
 import database
 
@@ -49,6 +51,27 @@ manager.add_command('database', database.manager)
 def config():
     """Pretty prints the app's config"""
     pprint.pprint(dict(current_app.config))
+
+
+@manager.command
+def imgur_auth():
+    """Run the initial Imgur auth flow"""
+    client_id = current_app.config['IMGUR_CLIENT_ID']
+    client_secret = current_app.config['IMGUR_CLIENT_SECRET']
+    client = ImgurClient(client_id, client_secret)
+    authorization_url = client.get_auth_url('token')
+    print 'Please visit:', authorization_url
+    access_token = prompt('Access Token')
+    refresh_token = prompt('Refresh Token')
+    client.set_user_auth(access_token, refresh_token)
+    u = User.query.get(1)
+    if u is None:
+        u = User()
+        u.uid = 1
+    u.access_token = access_token
+    u.refresh_token = refresh_token
+    db.session.add(u)
+    db.session.commit()
 
 
 @manager.command
