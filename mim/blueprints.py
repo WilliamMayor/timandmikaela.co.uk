@@ -38,10 +38,10 @@ def venue():
     u = User.query.get(1)
     client = ImgurClient(
         current_app.config['IMGUR_CLIENT_ID'],
-        current_app.config['IMGUR_CLIENT_ID'],
+        current_app.config['IMGUR_CLIENT_SECRET'],
         access_token=u.access_token,
         refresh_token=u.refresh_token)
-    album = client.get_album('63Tp6')
+    album = client.get_album('izwJA')
     if client.auth.current_access_token != u.access_token:
         u.access_token = client.auth.current_access_token
         db.session.add(u)
@@ -108,18 +108,16 @@ def photos(album=None):
     u = User.query.get(1)
     client = ImgurClient(
         current_app.config['IMGUR_CLIENT_ID'],
-        current_app.config['IMGUR_CLIENT_ID'],
+        current_app.config['IMGUR_CLIENT_SECRET'],
         access_token=u.access_token,
         refresh_token=u.refresh_token)
     albums = client.get_account_albums('timandmikaela')
-    print albums
     for a in albums:
         if a.id == album:
             break
     else:
         abort(404)
     a = client.get_album(album)
-    print a
     if client.auth.current_access_token != u.access_token:
         u.access_token = client.auth.current_access_token
         db.session.add(u)
